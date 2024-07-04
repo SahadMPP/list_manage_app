@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:list_app/application/features/auth/signin/bloc/sign_in_bloc.dart';
+import 'package:list_app/application/features/auth/signup/bloc/sign_up_bloc.dart';
+import 'package:list_app/application/features/auth/splash/bloc/splash_bloc.dart';
 import 'package:list_app/application/features/auth/splash/ui/splash_ui.dart';
+import 'package:list_app/application/features/productcalculation/home/bloc/home_bloc.dart';
 import 'package:list_app/data/model/hive/customer/customer_model.dart';
 import 'package:list_app/data/model/hive/product/product_model.dart';
 import 'package:list_app/data/model/hive/user/user_model.dart';
@@ -28,8 +33,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: SplashScreen(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) =>  SplashBloc(),),
+        BlocProvider(create: (context) =>  SignInBloc(),),
+        BlocProvider(create: (context) =>  SignUpBloc(),),
+        BlocProvider(create: (context) =>  HomeBloc(),),
+      ],
+      child: const MaterialApp(
+        home: SplashScreen(),
+      ),
     );
   }
 }

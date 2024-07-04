@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:list_app/application/core/widgets/custom_button.dart';
+import 'package:list_app/application/features/auth/signin/bloc/sign_in_bloc.dart';
 import 'package:list_app/application/features/auth/widgets/custum_textfield.dart';
 
 class SignInPage extends StatefulWidget {
@@ -87,7 +89,7 @@ class _SignInPageState extends State<SignInPage> {
               const SizedBox(height: 40),
               CustomButton(text: "SIGN IN", fun: (){
                 if (formKey.currentState!.validate()) {
-                  
+                  context.read<SignInBloc>().add(SignInEvent.login(email: namecontroller.text, password: passwordcontroller.text, context: context));
                 }
               }),
               const SizedBox(height: 100),
@@ -106,7 +108,7 @@ class _SignInPageState extends State<SignInPage> {
                   const SizedBox(width: 5),
                   InkWell(
                     onTap: () {
-                     
+                     context.read<SignInBloc>().add( SignInEvent.navigatingToSignup(context: context));
                     },
                     child: Text(
                       'Request Now',

@@ -1,7 +1,9 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:list_app/application/core/widgets/custom_button.dart';
+import 'package:list_app/application/features/auth/signup/bloc/sign_up_bloc.dart';
 import 'package:list_app/application/features/auth/widgets/custum_textfield.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -25,7 +27,7 @@ class _SignUpPageState extends State<SignUpPage> {
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding: const EdgeInsets.all(12.0),
           child: Column(
             children: [
               const SizedBox(height: 50),
@@ -43,7 +45,7 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
               const SizedBox(height: 20),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30),
+                padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: Text(
                   "Hey,Enter your details to get sign up to your account",
                   textAlign: TextAlign.center,
@@ -116,6 +118,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         ));
                         return;
                       }
+                      context.read<SignUpBloc>().add(SignUpEvent.registerUser(name: namecontroller.text, email: emailcontroller.text, password: passwordcontroller.text, context: context));
                     }
                   }),
               const SizedBox(height: 100),
@@ -127,19 +130,21 @@ class _SignUpPageState extends State<SignUpPage> {
                     style: GoogleFonts.aBeeZee(
                       textStyle: const TextStyle(
                           color: Colors.black45,
-                          fontSize: 10,
+                          fontSize: 8,
                           fontWeight: FontWeight.w600),
                     ),
                   ),
                   const SizedBox(width: 5),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      context.read<SignUpBloc>().add(SignUpEvent.navigatingToSign(context: context));
+                    },
                     child: Text(
                       'Sign in',
                       style: GoogleFonts.aBeeZee(
                         textStyle: const TextStyle(
                             color: Colors.black,
-                            fontSize: 11,
+                            fontSize: 9,
                             fontWeight: FontWeight.w600),
                       ),
                     ),

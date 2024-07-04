@@ -15,7 +15,7 @@ class AddingCustomerPage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: appbar('Add Customer'),
+      appBar: appbar(title: 'Add Customer'),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Form(

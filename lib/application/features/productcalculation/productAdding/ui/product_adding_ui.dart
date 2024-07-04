@@ -15,7 +15,7 @@ class ProductAddingPage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: appbar('Add product'),
+      appBar: appbar(title: 'Add product'),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Form(
