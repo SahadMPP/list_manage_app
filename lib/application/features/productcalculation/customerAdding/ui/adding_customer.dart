@@ -3,8 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:list_app/application/core/widgets/app_bar.dart';
 import 'package:list_app/application/features/auth/widgets/custum_textfield.dart';
 
-class ProductAddingPage extends StatelessWidget {
-  const ProductAddingPage({super.key});
+class AddingCustomerPage extends StatelessWidget {
+  const AddingCustomerPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class ProductAddingPage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: appbar('Add product'),
+      appBar: appbar('Add Customer'),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Form(
@@ -32,17 +32,17 @@ class ProductAddingPage extends StatelessWidget {
                       controller: nameController,
                       validatorText: "Enter name"),
                   CustomTextField(
-                      keyboardType: TextInputType.number,
-                      hintText: "Enter price",
+                    isEmail: true,
+                      hintText: "Enter email",
                       isPassword: false,
                       controller: emailController,
-                      validatorText: "Enter price"),
+                      validatorText: "Enter email"),
                   CustomTextField(
                       keyboardType: TextInputType.number,
-                      hintText: "Enter GST %",
+                      hintText: "Enter phone number",
                       isPassword: false,
                       controller: phoneController,
-                      validatorText: "Enter GST %"),
+                      validatorText: "Enter phone number"),
                 ],
               )),
               SizedBox(

@@ -1,27 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CostomTextField extends StatefulWidget {
+class CustomTextField extends StatefulWidget {
   final TextEditingController controller;
   final String hintText;
   final bool isPassword;
   final bool? isEmail;
   final String validatorText;
+  final TextInputType? keyboardType;
 
-  const CostomTextField({
+  const CustomTextField({
     super.key,
     required this.hintText,
     required this.isPassword,
     required this.controller,
     required this.validatorText,
-    this.isEmail,
+    this.isEmail, this.keyboardType,
   });
 
   @override
-  State<CostomTextField> createState() => _CostomTextFieldState();
+  State<CustomTextField> createState() => _CustomTextFieldState();
 }
 
-class _CostomTextFieldState extends State<CostomTextField> {
+class _CustomTextFieldState extends State<CustomTextField> {
   bool isHide = true;
 
   String? valiedateEmail(String? email) {
@@ -38,6 +39,12 @@ class _CostomTextFieldState extends State<CostomTextField> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5),
       child: TextFormField(
+        keyboardType:widget.keyboardType,
+        style: GoogleFonts.aBeeZee(textStyle: const TextStyle(
+          fontSize: 9,
+          color: Colors.black,
+          decoration: TextDecoration.none
+        )),
         autovalidateMode: AutovalidateMode.onUserInteraction,
         validator: (value) {
           if (widget.isEmail ?? false) {
@@ -57,6 +64,7 @@ class _CostomTextFieldState extends State<CostomTextField> {
         controller: widget.controller,
         obscureText: widget.isPassword && isHide,
         decoration: InputDecoration(
+        
           suffixIcon: widget.isPassword
               ? Padding(
                   padding: const EdgeInsets.only(top: 15),
@@ -84,9 +92,12 @@ class _CostomTextFieldState extends State<CostomTextField> {
                 )
               : null,
           hintText: widget.hintText,
-          contentPadding: const EdgeInsets.all(10),
+          errorStyle:const TextStyle(
+            fontSize: 8,
+          ) ,
+          contentPadding: const EdgeInsets.all(6),
           hintStyle: GoogleFonts.aBeeZee(
-            textStyle: const TextStyle(color: Colors.grey, fontSize: 12),
+            textStyle: const TextStyle(color: Colors.grey, fontSize: 8,fontWeight: FontWeight.w400),
           ),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.grey[300]!),
