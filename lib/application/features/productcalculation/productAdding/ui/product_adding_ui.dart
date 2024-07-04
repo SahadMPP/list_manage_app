@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:list_app/application/core/widgets/app_bar.dart';
 import 'package:list_app/application/features/auth/widgets/custum_textfield.dart';
+import 'package:list_app/application/features/productcalculation/productAdding/bloc/add_product_bloc.dart';
 
 class ProductAddingPage extends StatelessWidget {
   const ProductAddingPage({super.key});
@@ -10,8 +12,8 @@ class ProductAddingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     GlobalKey<FormState> formKey = GlobalKey<FormState>();
     TextEditingController nameController = TextEditingController();
-    TextEditingController emailController = TextEditingController();
-    TextEditingController phoneController = TextEditingController();
+    TextEditingController priceController = TextEditingController();
+    TextEditingController gstController = TextEditingController();
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -35,13 +37,13 @@ class ProductAddingPage extends StatelessWidget {
                       keyboardType: TextInputType.number,
                       hintText: "Enter price",
                       isPassword: false,
-                      controller: emailController,
+                      controller: priceController,
                       validatorText: "Enter price"),
                   CustomTextField(
                       keyboardType: TextInputType.number,
                       hintText: "Enter GST %",
                       isPassword: false,
-                      controller: phoneController,
+                      controller: gstController,
                       validatorText: "Enter GST %"),
                 ],
               )),
@@ -50,7 +52,9 @@ class ProductAddingPage extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    if (formKey.currentState!.validate()) {}
+                    if (formKey.currentState!.validate()) {
+                      context.read<AddProductBloc>().add(AddProductEvent.addProduct(name: nameController.text, price: priceController.text, gts: gstController.text, context: context));
+                    }
                   },
                   style: ButtonStyle(
                       backgroundColor: WidgetStatePropertyAll(Colors.blue[500]),

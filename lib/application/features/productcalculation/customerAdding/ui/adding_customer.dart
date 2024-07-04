@@ -1,21 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:list_app/application/core/widgets/app_bar.dart';
 import 'package:list_app/application/core/widgets/custom_button.dart';
 import 'package:list_app/application/features/auth/widgets/custum_textfield.dart';
+import 'package:list_app/application/features/productcalculation/customerAdding/bloc/add_coustomer_bloc.dart';
+import 'package:list_app/application/features/productcalculation/deatiles/bloc/deatile_bloc.dart';
+import 'package:list_app/application/features/productcalculation/home/bloc/home_bloc.dart';
+import 'package:list_app/data/model/hive/customer/customer_model.dart';
 
-class AddingCustomerPage extends StatelessWidget {
-  const AddingCustomerPage({super.key});
+class AddAndUpdateCustomerPage extends StatelessWidget {
+  final String desition;
+  final CustomerModel? customerModel;
+  const AddAndUpdateCustomerPage(
+      {super.key, required this.desition, this.customerModel});
 
   @override
   Widget build(BuildContext context) {
     GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
     TextEditingController nameController = TextEditingController();
     TextEditingController emailController = TextEditingController();
     TextEditingController phoneController = TextEditingController();
 
+    if (desition == 'UPDATE') {
+      nameController.text = customerModel!.name;
+      emailController.text = customerModel!.email;
+      phoneController.text = customerModel!.phoneNumber.toString();
+    }
+
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: appbar(title: 'Add Customer'),
+      appBar: desition == 'UPDATE'
+          ? appbar(title: "Update Customer")
+          : appbar(title: 'Add Customer'),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Form(
@@ -47,9 +64,31 @@ class AddingCustomerPage extends StatelessWidget {
               )),
               CustomButton(
                 fun: () {
-                  if (formKey.currentState!.validate()) {}
+                  if (formKey.currentState!.validate()) {
+                    if (desition == 'UPDATE') {
+                      context.read<AddCoustomerBloc>().add(
+                          AddCoustomerEvent.updateCustomer(
+                              context: context,
+                              name: nameController.text,
+                              email: emailController.text,
+                              id: customerModel!.id!,
+                              phoneNumber: int.parse(phoneController.text)));
+                              context.read<DeatileBloc>().add(DeatileEvent.getCurrentUser(id: customerModel!.id!));
+                    } else {
+                      context.read<AddCoustomerBloc>().add(
+                          AddCoustomerEvent.addingcustomer(
+                              context: context,
+                              name: nameController.text,
+                              email: emailController.text,
+                              phoneNumber: int.parse(phoneController.text)));
+                    }
+
+                    context
+                        .read<HomeBloc>()
+                        .add(const HomeEvent.getCustomerList());
+                  }
                 },
-                text: 'Add',
+                text: desition == 'UPDATE' ? 'UPDATE' : 'Add',
               ),
             ],
           ),
@@ -58,5 +97,3 @@ class AddingCustomerPage extends StatelessWidget {
     );
   }
 }
-
-

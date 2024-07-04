@@ -12,7 +12,7 @@ class CustomerModel {
   @HiveField(2)
   String email;
   @HiveField(3)
-  String phoneNumber;
+  int phoneNumber;
 
   CustomerModel(
       {this.id,

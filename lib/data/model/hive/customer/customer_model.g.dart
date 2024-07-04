@@ -20,7 +20,7 @@ class CustomerModelAdapter extends TypeAdapter<CustomerModel> {
       id: fields[0] as int?,
       name: fields[1] as String,
       email: fields[2] as String,
-      phoneNumber: fields[3] as String,
+      phoneNumber: fields[3] as int,
     );
   }
 

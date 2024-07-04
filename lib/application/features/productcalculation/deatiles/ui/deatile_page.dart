@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:list_app/application/core/widgets/app_bar.dart';
+import 'package:list_app/application/features/productcalculation/deatiles/bloc/deatile_bloc.dart';
+import 'package:list_app/data/model/hive/customer/customer_model.dart';
 
 class DeatilePage extends StatelessWidget {
-  const DeatilePage({super.key});
+  final CustomerModel customerModel;
+  const DeatilePage({super.key, required this.customerModel});
 
   @override
   Widget build(BuildContext context) {
+    context
+        .read<DeatileBloc>()
+        .add(DeatileEvent.getCurrentUser(id: customerModel.id!));
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -24,19 +32,7 @@ class DeatilePage extends StatelessWidget {
           color: Colors.white,
         ),
       ),
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        surfaceTintColor: Colors.transparent,
-        centerTitle: true,
-        title: Text(
-          "Customer Deatiles",
-          style: GoogleFonts.aBeeZee(
-              textStyle: const TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16)),
-        ),
-      ),
+      appBar: appbar(title: "Customer Deatiles"),
       backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -52,22 +48,35 @@ class DeatilePage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(color: Colors.grey[300]!),
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    const SizedBox(height: 10),
-                    const DeatilePageLine(title: "title", value: "value"),
-                    const DeatilePageLine(title: "title", value: "value"),
-                    const DeatilePageLine(title: "title", value: "value"),
-                    const SizedBox(height: 10),
-                    InkWell(
-                        onTap: () {},
-                        child: Icon(
-                          Icons.edit,
-                          color: Colors.grey[400],
-                          size: 18,
-                        ))
-                  ],
+                child: BlocBuilder<DeatileBloc, DeatileState>(
+                  builder: (context, state) {
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        const SizedBox(height: 10),
+                        DeatilePageLine(
+                            title: "Name", value: state.customer!.name),
+                        DeatilePageLine(
+                            title: "email", value: state.customer!.email),
+                        DeatilePageLine(
+                            title: "Phone number",
+                            value: state.customer!.phoneNumber.toString()),
+                        const SizedBox(height: 10),
+                        InkWell(
+                            onTap: () {
+                              context.read<DeatileBloc>().add(
+                                  DeatileEvent.cutomerUpdateNavigation(
+                                      context: context,
+                                      customerModel: customerModel));
+                            },
+                            child: Icon(
+                              Icons.edit,
+                              color: Colors.grey[400],
+                              size: 18,
+                            ))
+                      ],
+                    );
+                  },
                 ),
               ),
               const SizedBox(height: 10),
@@ -291,7 +300,7 @@ class CustomBottomSheet extends StatelessWidget {
                                           '0.00',
                                           style: GoogleFonts.aBeeZee(
                                               textStyle: const TextStyle(
-                                          color: Colors.grey,
+                                            color: Colors.grey,
                                             fontSize: 9,
                                           )),
                                         ),
@@ -306,7 +315,7 @@ class CustomBottomSheet extends StatelessWidget {
                                           'GST',
                                           style: GoogleFonts.aBeeZee(
                                               textStyle: const TextStyle(
-                                             color: Colors.grey,
+                                            color: Colors.grey,
                                             fontSize: 9,
                                           )),
                                         ),
@@ -314,7 +323,7 @@ class CustomBottomSheet extends StatelessWidget {
                                           '0.00',
                                           style: GoogleFonts.aBeeZee(
                                               textStyle: const TextStyle(
-                                                 color: Colors.grey,
+                                            color: Colors.grey,
                                             fontSize: 9,
                                           )),
                                         ),
