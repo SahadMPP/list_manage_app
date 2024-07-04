@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:list_app/application/core/widgets/app_bar.dart';
+import 'package:list_app/application/core/widgets/custom_button.dart';
 import 'package:list_app/application/features/auth/widgets/custum_textfield.dart';
 
 class AddingCustomerPage extends StatelessWidget {
@@ -22,7 +22,7 @@ class AddingCustomerPage extends StatelessWidget {
           key: formKey,
           child: Column(
             children: [
-              const SizedBox(height: 30),
+              const SizedBox(height: 20),
               Expanded(
                   child: ListView(
                 children: [
@@ -32,7 +32,7 @@ class AddingCustomerPage extends StatelessWidget {
                       controller: nameController,
                       validatorText: "Enter name"),
                   CustomTextField(
-                    isEmail: true,
+                      isEmail: true,
                       hintText: "Enter email",
                       isPassword: false,
                       controller: emailController,
@@ -45,26 +45,11 @@ class AddingCustomerPage extends StatelessWidget {
                       validatorText: "Enter phone number"),
                 ],
               )),
-              SizedBox(
-                height: 50,
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {
-                    if (formKey.currentState!.validate()) {}
-                  },
-                  style: ButtonStyle(
-                      backgroundColor: WidgetStatePropertyAll(Colors.blue[500]),
-                      shape: WidgetStatePropertyAll(ContinuousRectangleBorder(
-                          borderRadius: BorderRadius.circular(12)))),
-                  child: Text(
-                    'Add',
-                    style: GoogleFonts.aBeeZee(
-                        textStyle: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 9,
-                    )),
-                  ),
-                ),
+              CustomButton(
+                fun: () {
+                  if (formKey.currentState!.validate()) {}
+                },
+                text: 'Add',
               ),
             ],
           ),
@@ -73,3 +58,5 @@ class AddingCustomerPage extends StatelessWidget {
     );
   }
 }
+
+

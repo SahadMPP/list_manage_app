@@ -15,7 +15,8 @@ class CustomTextField extends StatefulWidget {
     required this.isPassword,
     required this.controller,
     required this.validatorText,
-    this.isEmail, this.keyboardType,
+    this.isEmail,
+    this.keyboardType,
   });
 
   @override
@@ -39,32 +40,29 @@ class _CustomTextFieldState extends State<CustomTextField> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5),
       child: TextFormField(
-        keyboardType:widget.keyboardType,
-        style: GoogleFonts.aBeeZee(textStyle: const TextStyle(
-          fontSize: 9,
-          color: Colors.black,
-          decoration: TextDecoration.none
-        )),
+        keyboardType: widget.keyboardType,
+        style: GoogleFonts.aBeeZee(
+            textStyle: const TextStyle(
+                fontSize: 9,
+                color: Colors.black,
+                decoration: TextDecoration.none)),
         autovalidateMode: AutovalidateMode.onUserInteraction,
         validator: (value) {
           if (widget.isEmail ?? false) {
-           return valiedateEmail(widget.controller.text);
-          }else{
-           if (value == null || value.isEmpty) {
-            return widget.validatorText;
-          } else if (widget.isPassword && value.length < 8) {
-            return 'Password length needs to be at least 8 characters';
+            return valiedateEmail(widget.controller.text);
           } else {
-            return null;
+            if (value == null || value.isEmpty) {
+              return widget.validatorText;
+            } else if (widget.isPassword && value.length < 8) {
+              return 'Password length needs to be at least 8 characters';
+            } else {
+              return null;
+            }
           }
-          }
-
-          
         },
         controller: widget.controller,
         obscureText: widget.isPassword && isHide,
         decoration: InputDecoration(
-        
           suffixIcon: widget.isPassword
               ? Padding(
                   padding: const EdgeInsets.only(top: 15),
@@ -92,12 +90,13 @@ class _CustomTextFieldState extends State<CustomTextField> {
                 )
               : null,
           hintText: widget.hintText,
-          errorStyle:const TextStyle(
-            fontSize: 8,
-          ) ,
+          errorStyle: const TextStyle(
+            fontSize: 12,
+          ),
           contentPadding: const EdgeInsets.all(6),
           hintStyle: GoogleFonts.aBeeZee(
-            textStyle: const TextStyle(color: Colors.grey, fontSize: 8,fontWeight: FontWeight.w400),
+            textStyle: const TextStyle(
+                color: Colors.grey, fontSize: 12, fontWeight: FontWeight.w400),
           ),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.grey[300]!),
