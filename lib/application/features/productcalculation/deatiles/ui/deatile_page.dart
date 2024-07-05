@@ -181,7 +181,8 @@ class DeatilePage extends StatelessWidget {
                                                         .read<DeatileBloc>()
                                                         .add(DeatileEvent
                                                             .productCartdelete(
-                                                              context: context,
+                                                                context:
+                                                                    context,
                                                                 id: productCartList[
                                                                         index]
                                                                     .id!));
@@ -327,8 +328,15 @@ class CustomBottomSheet extends StatelessWidget {
                                       child: ElevatedButton(
                                         onPressed: () {
                                           context.read<DeatileBloc>().add(
+                                              DeatileEvent.addingCartProduct(
+                                                  name:
+                                                      productList[index].name));
+
+                                          context.read<DeatileBloc>().add(
                                               const DeatileEvent
-                                                  .addingCartProduct());
+                                                  .productCartList());
+
+                                          Navigator.of(context).pop();
                                         },
                                         style: ButtonStyle(
                                             backgroundColor:

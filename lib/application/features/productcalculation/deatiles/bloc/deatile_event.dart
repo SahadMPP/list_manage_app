@@ -28,11 +28,10 @@ class DeatileEvent with _$DeatileEvent {
   }) = _calculateTotol;
 
 
-  const factory DeatileEvent.addingCartProduct() = _addingCartProduct;
+  const factory DeatileEvent.addingCartProduct({
+    required String name,
+  }) = _addingCartProduct;
 
   const factory DeatileEvent.productCartList() = _productCartList;
 
-  
-  
-  
 }
