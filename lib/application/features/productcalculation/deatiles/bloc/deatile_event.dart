@@ -7,9 +7,11 @@ class DeatileEvent with _$DeatileEvent {
    required CustomerModel customerModel,
   }) = _cutomerUpdateNavigation;
 
-  const factory DeatileEvent.productCartList() = _productCartList;
 
-  const factory DeatileEvent.productCartdelete() = _productCartdelete;
+  const factory DeatileEvent.productCartdelete({
+    required int id,
+    required BuildContext context,
+  }) = _productCartdelete;
   
  
   
@@ -27,6 +29,9 @@ class DeatileEvent with _$DeatileEvent {
 
 
   const factory DeatileEvent.addingCartProduct() = _addingCartProduct;
+
+  const factory DeatileEvent.productCartList() = _productCartList;
+
   
   
   

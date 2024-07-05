@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:list_app/application/core/widgets/app_bar.dart';
 import 'package:list_app/application/features/productcalculation/deatiles/bloc/deatile_bloc.dart';
+import 'package:list_app/data/model/hive/cart/cart_model.dart';
 import 'package:list_app/data/model/hive/customer/customer_model.dart';
 import 'package:list_app/data/model/hive/product/product_model.dart';
 
@@ -13,6 +14,7 @@ class DeatilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.read<DeatileBloc>().add(const DeatileEvent.productCartList());
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -90,44 +92,139 @@ class DeatilePage extends StatelessWidget {
               Expanded(
                 child: BlocBuilder<DeatileBloc, DeatileState>(
                   builder: (context, state) {
-                    return ListView.builder(
-                      itemCount: 2,
-                      itemBuilder: (context, index) {
-                        return Container(
-                          margin: const EdgeInsets.only(bottom: 10),
-                          height: 70,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            border: Border.all(color: Colors.grey[300]!),
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: ListTile(
-                            title: Text(
-                              '""?""',
-                              style: GoogleFonts.roboto(
-                                  textStyle: const TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.w500,
-                                      letterSpacing: 1,
-                                      fontSize: 10)),
+                    List<CartModel> productCartList = state.cartList;
+                    if (productCartList.isEmpty) {
+                      return const Center(child: Text('list is empty'));
+                    } else {
+                      return ListView.builder(
+                        itemCount: productCartList.length,
+                        itemBuilder: (context, index) {
+                          return Container(
+                            margin: const EdgeInsets.only(bottom: 10),
+                            height: 70,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.grey[300]!),
+                              borderRadius: BorderRadius.circular(12),
                             ),
-                            subtitle: Text(
-                              '',
-                              style: GoogleFonts.nunito(
-                                  textStyle: const TextStyle(
-                                      color: Colors.red,
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 8)),
+                            child: ListTile(
+                              title: Text(
+                                "${productCartList[index].name} x ${productCartList[index].quantity}",
+                                style: GoogleFonts.roboto(
+                                    textStyle: const TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w500,
+                                        letterSpacing: 1,
+                                        fontSize: 10)),
+                              ),
+                              subtitle: Text(
+                                'TotelAmt: ${productCartList[index].totelPrice}',
+                                style: GoogleFonts.nunito(
+                                    textStyle: const TextStyle(
+                                        color: Colors.red,
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 8)),
+                              ),
+                              trailing: InkWell(
+                                onTap: () {
+                                  showDialog(
+                                    context: context,
+                                    builder: (context) => AlertDialog(
+                                      contentPadding: const EdgeInsets.all(12),
+                                      content: SizedBox(
+                                        height:
+                                            MediaQuery.of(context).size.height *
+                                                .2,
+                                        child: Column(
+                                          children: [
+                                            const SizedBox(height: 30),
+                                            Text(
+                                              "Are you sure to delete ?",
+                                              textAlign: TextAlign.justify,
+                                              style: GoogleFonts.aBeeZee(
+                                                  textStyle: const TextStyle(
+                                                fontSize: 12,
+                                              )),
+                                            ),
+                                            const Spacer(),
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              children: [
+                                                ElevatedButton(
+                                                  onPressed: () {
+                                                    Navigator.of(context).pop();
+                                                  },
+                                                  style: ButtonStyle(
+                                                      backgroundColor:
+                                                          WidgetStatePropertyAll(
+                                                              Colors.grey[500]),
+                                                      shape: WidgetStatePropertyAll(
+                                                          ContinuousRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          5)))),
+                                                  child: Text(
+                                                    'Close',
+                                                    style: GoogleFonts.aBeeZee(
+                                                        textStyle:
+                                                            const TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 8,
+                                                    )),
+                                                  ),
+                                                ),
+                                                ElevatedButton(
+                                                  onPressed: () {
+                                                    context
+                                                        .read<DeatileBloc>()
+                                                        .add(DeatileEvent
+                                                            .productCartdelete(
+                                                              context: context,
+                                                                id: productCartList[
+                                                                        index]
+                                                                    .id!));
+                                                  },
+                                                  style: ButtonStyle(
+                                                      backgroundColor:
+                                                          WidgetStatePropertyAll(
+                                                              Colors.red[100]),
+                                                      shape: WidgetStatePropertyAll(
+                                                          ContinuousRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          5)))),
+                                                  child: Text(
+                                                    'Yes',
+                                                    style: GoogleFonts.aBeeZee(
+                                                        textStyle:
+                                                            const TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 8,
+                                                    )),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                },
+                                child: const Icon(
+                                  Icons.delete_outline_outlined,
+                                  color: Colors.red,
+                                  size: 24,
+                                ),
+                              ),
                             ),
-                            trailing: const Icon(
-                              Icons.delete_outline_outlined,
-                              color: Colors.red,
-                              size: 24,
-                            ),
-                          ),
-                        );
-                      },
-                    );
+                          );
+                        },
+                      );
+                    }
                   },
                 ),
               )

@@ -63,5 +63,26 @@ class DeatileBloc extends Bloc<DeatileEvent, DeatileState> {
               id: id));
       print("added sucessfully");
     });
+
+    on<_productCartList>((event, emit) async {
+      List<CartModel> list = [];
+      final db = await Hive.openBox<CartModel>("cart_db");
+      for (var i = 0; i < db.length; i++) {
+        list.add(db.getAt(i)!);
+      }
+      emit(state.copyWith(cartList: list));
+    });
+
+    on<_productCartdelete>((event, emit) async {
+      List<CartModel> list = [];
+      final db = await Hive.openBox<CartModel>("cart_db");
+      db.delete(event.id);
+      for (var i = 0; i < db.length; i++) {
+        list.add(db.getAt(i)!);
+      }
+      emit(state.copyWith(cartList: list));
+      // ignore: use_build_context_synchronously
+      Navigator.of(event.context).pop();
+    });
   }
 }
