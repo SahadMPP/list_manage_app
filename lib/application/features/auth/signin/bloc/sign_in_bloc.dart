@@ -2,10 +2,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:list_app/application/features/auth/signup/ui/signup_ui.dart';
 import 'package:list_app/application/features/productcalculation/home/ui/home_ui.dart';
-import 'package:list_app/data/model/hive/user/user_model.dart';
+import 'package:list_app/domain/usecase/auth_usecase.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 part 'sign_in_event.dart';
@@ -22,8 +21,8 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
 
     on<_login>((event, emit) async {
       Future<bool> isRegisted() async {
-        final userDB = await Hive.openBox<UserModel>("user_db");
-
+        // final userDB = await Hive.openBox<UserModel>("user_db");
+        final userDB = await AuthUseCase().gettingUsersDatafromDatabase();
         for (var i = 0; i < userDB.length; i++) {
           final currentUser = userDB.getAt(i);
           if (currentUser!.email == event.email &&

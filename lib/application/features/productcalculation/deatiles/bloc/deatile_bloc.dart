@@ -48,6 +48,7 @@ class DeatileBloc extends Bloc<DeatileEvent, DeatileState> {
 
     on<_addingCartProduct>((event, emit) async {
       final data = CartModel(
+        userId: event.customerId,
           quantity: state.quantity,
           totelPrice: state.totelPrice.toDouble(),
           name: event.name);
@@ -60,7 +61,8 @@ class DeatileBloc extends Bloc<DeatileEvent, DeatileState> {
       db.put(
           id,
           CartModel(
-              quantity: cart!.quantity,
+            userId: cart!.userId,
+              quantity: cart.quantity,
               totelPrice: cart.totelPrice,
               name: cart.name,
               id: id));
@@ -72,7 +74,9 @@ class DeatileBloc extends Bloc<DeatileEvent, DeatileState> {
       List<CartModel> list = [];
       final db = await Hive.openBox<CartModel>("cart_db");
       for (var i = 0; i < db.length; i++) {
-        list.add(db.getAt(i)!);
+        if (event.id == db.getAt(i)!.userId) {
+          list.add(db.getAt(i)!);
+        }
       }
       emit(state.copyWith(cartList: list));
     });

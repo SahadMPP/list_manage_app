@@ -25,8 +25,8 @@ mixin _$DeatileEvent {
     required TResult Function() productList,
     required TResult Function(double price, double gst, int quantity)
         calculateTotol,
-    required TResult Function(String name) addingCartProduct,
-    required TResult Function() productCartList,
+    required TResult Function(String name, int customerId) addingCartProduct,
+    required TResult Function(int id) productCartList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,8 +37,8 @@ mixin _$DeatileEvent {
     TResult? Function(int id)? getCurrentUser,
     TResult? Function()? productList,
     TResult? Function(double price, double gst, int quantity)? calculateTotol,
-    TResult? Function(String name)? addingCartProduct,
-    TResult? Function()? productCartList,
+    TResult? Function(String name, int customerId)? addingCartProduct,
+    TResult? Function(int id)? productCartList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -49,8 +49,8 @@ mixin _$DeatileEvent {
     TResult Function(int id)? getCurrentUser,
     TResult Function()? productList,
     TResult Function(double price, double gst, int quantity)? calculateTotol,
-    TResult Function(String name)? addingCartProduct,
-    TResult Function()? productCartList,
+    TResult Function(String name, int customerId)? addingCartProduct,
+    TResult Function(int id)? productCartList,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -193,8 +193,8 @@ class _$cutomerUpdateNavigationImpl implements _cutomerUpdateNavigation {
     required TResult Function() productList,
     required TResult Function(double price, double gst, int quantity)
         calculateTotol,
-    required TResult Function(String name) addingCartProduct,
-    required TResult Function() productCartList,
+    required TResult Function(String name, int customerId) addingCartProduct,
+    required TResult Function(int id) productCartList,
   }) {
     return cutomerUpdateNavigation(context, customerModel);
   }
@@ -208,8 +208,8 @@ class _$cutomerUpdateNavigationImpl implements _cutomerUpdateNavigation {
     TResult? Function(int id)? getCurrentUser,
     TResult? Function()? productList,
     TResult? Function(double price, double gst, int quantity)? calculateTotol,
-    TResult? Function(String name)? addingCartProduct,
-    TResult? Function()? productCartList,
+    TResult? Function(String name, int customerId)? addingCartProduct,
+    TResult? Function(int id)? productCartList,
   }) {
     return cutomerUpdateNavigation?.call(context, customerModel);
   }
@@ -223,8 +223,8 @@ class _$cutomerUpdateNavigationImpl implements _cutomerUpdateNavigation {
     TResult Function(int id)? getCurrentUser,
     TResult Function()? productList,
     TResult Function(double price, double gst, int quantity)? calculateTotol,
-    TResult Function(String name)? addingCartProduct,
-    TResult Function()? productCartList,
+    TResult Function(String name, int customerId)? addingCartProduct,
+    TResult Function(int id)? productCartList,
     required TResult orElse(),
   }) {
     if (cutomerUpdateNavigation != null) {
@@ -374,8 +374,8 @@ class _$productCartdeleteImpl implements _productCartdelete {
     required TResult Function() productList,
     required TResult Function(double price, double gst, int quantity)
         calculateTotol,
-    required TResult Function(String name) addingCartProduct,
-    required TResult Function() productCartList,
+    required TResult Function(String name, int customerId) addingCartProduct,
+    required TResult Function(int id) productCartList,
   }) {
     return productCartdelete(id, context);
   }
@@ -389,8 +389,8 @@ class _$productCartdeleteImpl implements _productCartdelete {
     TResult? Function(int id)? getCurrentUser,
     TResult? Function()? productList,
     TResult? Function(double price, double gst, int quantity)? calculateTotol,
-    TResult? Function(String name)? addingCartProduct,
-    TResult? Function()? productCartList,
+    TResult? Function(String name, int customerId)? addingCartProduct,
+    TResult? Function(int id)? productCartList,
   }) {
     return productCartdelete?.call(id, context);
   }
@@ -404,8 +404,8 @@ class _$productCartdeleteImpl implements _productCartdelete {
     TResult Function(int id)? getCurrentUser,
     TResult Function()? productList,
     TResult Function(double price, double gst, int quantity)? calculateTotol,
-    TResult Function(String name)? addingCartProduct,
-    TResult Function()? productCartList,
+    TResult Function(String name, int customerId)? addingCartProduct,
+    TResult Function(int id)? productCartList,
     required TResult orElse(),
   }) {
     if (productCartdelete != null) {
@@ -546,8 +546,8 @@ class _$getCurrentUserImpl implements _getCurrentUser {
     required TResult Function() productList,
     required TResult Function(double price, double gst, int quantity)
         calculateTotol,
-    required TResult Function(String name) addingCartProduct,
-    required TResult Function() productCartList,
+    required TResult Function(String name, int customerId) addingCartProduct,
+    required TResult Function(int id) productCartList,
   }) {
     return getCurrentUser(id);
   }
@@ -561,8 +561,8 @@ class _$getCurrentUserImpl implements _getCurrentUser {
     TResult? Function(int id)? getCurrentUser,
     TResult? Function()? productList,
     TResult? Function(double price, double gst, int quantity)? calculateTotol,
-    TResult? Function(String name)? addingCartProduct,
-    TResult? Function()? productCartList,
+    TResult? Function(String name, int customerId)? addingCartProduct,
+    TResult? Function(int id)? productCartList,
   }) {
     return getCurrentUser?.call(id);
   }
@@ -576,8 +576,8 @@ class _$getCurrentUserImpl implements _getCurrentUser {
     TResult Function(int id)? getCurrentUser,
     TResult Function()? productList,
     TResult Function(double price, double gst, int quantity)? calculateTotol,
-    TResult Function(String name)? addingCartProduct,
-    TResult Function()? productCartList,
+    TResult Function(String name, int customerId)? addingCartProduct,
+    TResult Function(int id)? productCartList,
     required TResult orElse(),
   }) {
     if (getCurrentUser != null) {
@@ -688,8 +688,8 @@ class _$productListImpl implements _productList {
     required TResult Function() productList,
     required TResult Function(double price, double gst, int quantity)
         calculateTotol,
-    required TResult Function(String name) addingCartProduct,
-    required TResult Function() productCartList,
+    required TResult Function(String name, int customerId) addingCartProduct,
+    required TResult Function(int id) productCartList,
   }) {
     return productList();
   }
@@ -703,8 +703,8 @@ class _$productListImpl implements _productList {
     TResult? Function(int id)? getCurrentUser,
     TResult? Function()? productList,
     TResult? Function(double price, double gst, int quantity)? calculateTotol,
-    TResult? Function(String name)? addingCartProduct,
-    TResult? Function()? productCartList,
+    TResult? Function(String name, int customerId)? addingCartProduct,
+    TResult? Function(int id)? productCartList,
   }) {
     return productList?.call();
   }
@@ -718,8 +718,8 @@ class _$productListImpl implements _productList {
     TResult Function(int id)? getCurrentUser,
     TResult Function()? productList,
     TResult Function(double price, double gst, int quantity)? calculateTotol,
-    TResult Function(String name)? addingCartProduct,
-    TResult Function()? productCartList,
+    TResult Function(String name, int customerId)? addingCartProduct,
+    TResult Function(int id)? productCartList,
     required TResult orElse(),
   }) {
     if (productList != null) {
@@ -870,8 +870,8 @@ class _$calculateTotolImpl implements _calculateTotol {
     required TResult Function() productList,
     required TResult Function(double price, double gst, int quantity)
         calculateTotol,
-    required TResult Function(String name) addingCartProduct,
-    required TResult Function() productCartList,
+    required TResult Function(String name, int customerId) addingCartProduct,
+    required TResult Function(int id) productCartList,
   }) {
     return calculateTotol(price, gst, quantity);
   }
@@ -885,8 +885,8 @@ class _$calculateTotolImpl implements _calculateTotol {
     TResult? Function(int id)? getCurrentUser,
     TResult? Function()? productList,
     TResult? Function(double price, double gst, int quantity)? calculateTotol,
-    TResult? Function(String name)? addingCartProduct,
-    TResult? Function()? productCartList,
+    TResult? Function(String name, int customerId)? addingCartProduct,
+    TResult? Function(int id)? productCartList,
   }) {
     return calculateTotol?.call(price, gst, quantity);
   }
@@ -900,8 +900,8 @@ class _$calculateTotolImpl implements _calculateTotol {
     TResult Function(int id)? getCurrentUser,
     TResult Function()? productList,
     TResult Function(double price, double gst, int quantity)? calculateTotol,
-    TResult Function(String name)? addingCartProduct,
-    TResult Function()? productCartList,
+    TResult Function(String name, int customerId)? addingCartProduct,
+    TResult Function(int id)? productCartList,
     required TResult orElse(),
   }) {
     if (calculateTotol != null) {
@@ -978,7 +978,7 @@ abstract class _$$addingCartProductImplCopyWith<$Res> {
           $Res Function(_$addingCartProductImpl) then) =
       __$$addingCartProductImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String name});
+  $Res call({String name, int customerId});
 }
 
 /// @nodoc
@@ -993,12 +993,17 @@ class __$$addingCartProductImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? name = null,
+    Object? customerId = null,
   }) {
     return _then(_$addingCartProductImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      customerId: null == customerId
+          ? _value.customerId
+          : customerId // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -1006,14 +1011,16 @@ class __$$addingCartProductImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$addingCartProductImpl implements _addingCartProduct {
-  const _$addingCartProductImpl({required this.name});
+  const _$addingCartProductImpl({required this.name, required this.customerId});
 
   @override
   final String name;
+  @override
+  final int customerId;
 
   @override
   String toString() {
-    return 'DeatileEvent.addingCartProduct(name: $name)';
+    return 'DeatileEvent.addingCartProduct(name: $name, customerId: $customerId)';
   }
 
   @override
@@ -1021,11 +1028,13 @@ class _$addingCartProductImpl implements _addingCartProduct {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$addingCartProductImpl &&
-            (identical(other.name, name) || other.name == name));
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.customerId, customerId) ||
+                other.customerId == customerId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, name);
+  int get hashCode => Object.hash(runtimeType, name, customerId);
 
   @JsonKey(ignore: true)
   @override
@@ -1044,10 +1053,10 @@ class _$addingCartProductImpl implements _addingCartProduct {
     required TResult Function() productList,
     required TResult Function(double price, double gst, int quantity)
         calculateTotol,
-    required TResult Function(String name) addingCartProduct,
-    required TResult Function() productCartList,
+    required TResult Function(String name, int customerId) addingCartProduct,
+    required TResult Function(int id) productCartList,
   }) {
-    return addingCartProduct(name);
+    return addingCartProduct(name, customerId);
   }
 
   @override
@@ -1059,10 +1068,10 @@ class _$addingCartProductImpl implements _addingCartProduct {
     TResult? Function(int id)? getCurrentUser,
     TResult? Function()? productList,
     TResult? Function(double price, double gst, int quantity)? calculateTotol,
-    TResult? Function(String name)? addingCartProduct,
-    TResult? Function()? productCartList,
+    TResult? Function(String name, int customerId)? addingCartProduct,
+    TResult? Function(int id)? productCartList,
   }) {
-    return addingCartProduct?.call(name);
+    return addingCartProduct?.call(name, customerId);
   }
 
   @override
@@ -1074,12 +1083,12 @@ class _$addingCartProductImpl implements _addingCartProduct {
     TResult Function(int id)? getCurrentUser,
     TResult Function()? productList,
     TResult Function(double price, double gst, int quantity)? calculateTotol,
-    TResult Function(String name)? addingCartProduct,
-    TResult Function()? productCartList,
+    TResult Function(String name, int customerId)? addingCartProduct,
+    TResult Function(int id)? productCartList,
     required TResult orElse(),
   }) {
     if (addingCartProduct != null) {
-      return addingCartProduct(name);
+      return addingCartProduct(name, customerId);
     }
     return orElse();
   }
@@ -1133,10 +1142,12 @@ class _$addingCartProductImpl implements _addingCartProduct {
 }
 
 abstract class _addingCartProduct implements DeatileEvent {
-  const factory _addingCartProduct({required final String name}) =
-      _$addingCartProductImpl;
+  const factory _addingCartProduct(
+      {required final String name,
+      required final int customerId}) = _$addingCartProductImpl;
 
   String get name;
+  int get customerId;
   @JsonKey(ignore: true)
   _$$addingCartProductImplCopyWith<_$addingCartProductImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1147,6 +1158,8 @@ abstract class _$$productCartListImplCopyWith<$Res> {
   factory _$$productCartListImplCopyWith(_$productCartListImpl value,
           $Res Function(_$productCartListImpl) then) =
       __$$productCartListImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int id});
 }
 
 /// @nodoc
@@ -1156,26 +1169,51 @@ class __$$productCartListImplCopyWithImpl<$Res>
   __$$productCartListImplCopyWithImpl(
       _$productCartListImpl _value, $Res Function(_$productCartListImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$productCartListImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$productCartListImpl implements _productCartList {
-  const _$productCartListImpl();
+  const _$productCartListImpl({required this.id});
+
+  @override
+  final int id;
 
   @override
   String toString() {
-    return 'DeatileEvent.productCartList()';
+    return 'DeatileEvent.productCartList(id: $id)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$productCartListImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$productCartListImpl &&
+            (identical(other.id, id) || other.id == id));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$productCartListImplCopyWith<_$productCartListImpl> get copyWith =>
+      __$$productCartListImplCopyWithImpl<_$productCartListImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1187,10 +1225,10 @@ class _$productCartListImpl implements _productCartList {
     required TResult Function() productList,
     required TResult Function(double price, double gst, int quantity)
         calculateTotol,
-    required TResult Function(String name) addingCartProduct,
-    required TResult Function() productCartList,
+    required TResult Function(String name, int customerId) addingCartProduct,
+    required TResult Function(int id) productCartList,
   }) {
-    return productCartList();
+    return productCartList(id);
   }
 
   @override
@@ -1202,10 +1240,10 @@ class _$productCartListImpl implements _productCartList {
     TResult? Function(int id)? getCurrentUser,
     TResult? Function()? productList,
     TResult? Function(double price, double gst, int quantity)? calculateTotol,
-    TResult? Function(String name)? addingCartProduct,
-    TResult? Function()? productCartList,
+    TResult? Function(String name, int customerId)? addingCartProduct,
+    TResult? Function(int id)? productCartList,
   }) {
-    return productCartList?.call();
+    return productCartList?.call(id);
   }
 
   @override
@@ -1217,12 +1255,12 @@ class _$productCartListImpl implements _productCartList {
     TResult Function(int id)? getCurrentUser,
     TResult Function()? productList,
     TResult Function(double price, double gst, int quantity)? calculateTotol,
-    TResult Function(String name)? addingCartProduct,
-    TResult Function()? productCartList,
+    TResult Function(String name, int customerId)? addingCartProduct,
+    TResult Function(int id)? productCartList,
     required TResult orElse(),
   }) {
     if (productCartList != null) {
-      return productCartList();
+      return productCartList(id);
     }
     return orElse();
   }
@@ -1276,7 +1314,13 @@ class _$productCartListImpl implements _productCartList {
 }
 
 abstract class _productCartList implements DeatileEvent {
-  const factory _productCartList() = _$productCartListImpl;
+  const factory _productCartList({required final int id}) =
+      _$productCartListImpl;
+
+  int get id;
+  @JsonKey(ignore: true)
+  _$$productCartListImplCopyWith<_$productCartListImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

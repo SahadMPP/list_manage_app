@@ -11,8 +11,10 @@ class CartModel {
   double totelPrice;
 @HiveField(3)
  String name;
+@HiveField(4)
+ int userId;
 
-CartModel({this.id,required this.quantity,required this.totelPrice,required this.name});
+CartModel({this.id,required this.quantity,required this.totelPrice,required this.name,required this.userId});
 
   
 }

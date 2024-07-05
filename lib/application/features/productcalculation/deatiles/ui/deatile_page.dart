@@ -15,14 +15,14 @@ class DeatilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.read<DeatileBloc>().add(const DeatileEvent.productCartList());
+    context.read<DeatileBloc>().add( DeatileEvent.productCartList(id: customerModel.id!));
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet<void>(
             context: context,
             builder: (BuildContext context) {
-              return const CustomBottomSheet();
+              return  CustomBottomSheet(customerModel: customerModel,);
             },
           );
         },
@@ -245,8 +245,10 @@ class DeatilePage extends StatelessWidget {
 }
 
 class CustomBottomSheet extends StatelessWidget {
+  final CustomerModel customerModel;
   const CustomBottomSheet({
-    super.key,
+    
+    super.key, required this.customerModel,
   });
 
   @override
@@ -340,12 +342,14 @@ class CustomBottomSheet extends StatelessWidget {
                                         onPressed: () {
                                           context.read<DeatileBloc>().add(
                                               DeatileEvent.addingCartProduct(
+                                                customerId:customerModel.id!,
                                                   name:
                                                       productList[index].name));
 
                                           context.read<DeatileBloc>().add(
-                                              const DeatileEvent
-                                                  .productCartList());
+                                          
+                                               DeatileEvent
+                                                  .productCartList(id:customerModel.id! ));
 
                                           Navigator.of(context).pop();
                                         },

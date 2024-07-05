@@ -10,9 +10,9 @@ AppBar appbar(
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.transparent,
         centerTitle: true,
-        title: Text(title,style: GoogleFonts.aBeeZee(
+        title: Text(title.toUpperCase(),style: GoogleFonts.aBeeZee(
           textStyle: const TextStyle(
-            fontSize: 12,fontWeight: FontWeight.w500,color: Colors.black
+            fontSize: 14,fontWeight: FontWeight.bold,color: Colors.black
           )
         ),),
       );}

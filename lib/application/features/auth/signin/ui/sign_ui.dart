@@ -101,7 +101,7 @@ class _SignInPageState extends State<SignInPage> {
                     style: GoogleFonts.aBeeZee(
                       textStyle: const TextStyle(
                           color: Colors.black45,
-                          fontSize: 10,
+                          fontSize: 8,
                           fontWeight: FontWeight.w600),
                     ),
                   ),
@@ -113,9 +113,10 @@ class _SignInPageState extends State<SignInPage> {
                     child: Text(
                       'Request Now',
                       style: GoogleFonts.aBeeZee(
+                        
                         textStyle: const TextStyle(
                             color: Colors.black,
-                            fontSize: 11,
+                            fontSize: 8.5,
                             fontWeight: FontWeight.w600),
                       ),
                     ),

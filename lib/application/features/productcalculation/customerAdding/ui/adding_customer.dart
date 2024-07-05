@@ -73,7 +73,8 @@ class AddAndUpdateCustomerPage extends StatelessWidget {
                               email: emailController.text,
                               id: customerModel!.id!,
                               phoneNumber: int.parse(phoneController.text)));
-                              context.read<DeatileBloc>().add(DeatileEvent.getCurrentUser(id: customerModel!.id!));
+                      context.read<DeatileBloc>().add(
+                          DeatileEvent.getCurrentUser(id: customerModel!.id!));
                     } else {
                       context.read<AddCoustomerBloc>().add(
                           AddCoustomerEvent.addingcustomer(

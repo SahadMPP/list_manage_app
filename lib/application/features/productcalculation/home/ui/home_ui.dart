@@ -158,7 +158,7 @@ class Home extends StatelessWidget {
                     hintStyle: GoogleFonts.aBeeZee(
                         textStyle: const TextStyle(
                             fontWeight: FontWeight.w300,
-                            fontSize: 8,
+                            fontSize: 12,
                             color: Colors.grey))),
               ),
               const SizedBox(height: 20),
@@ -228,7 +228,7 @@ class CustomCustomerList extends StatelessWidget {
                             textStyle: const TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.w500,
-                                fontSize: 10)),
+                                fontSize: 14)),
                       ),
                       subtitle: Text(
                         state.list[index].email,
@@ -236,7 +236,7 @@ class CustomCustomerList extends StatelessWidget {
                             textStyle: const TextStyle(
                                 color: Colors.grey,
                                 fontWeight: FontWeight.w400,
-                                fontSize: 8)),
+                                fontSize: 12)),
                       ),
                       trailing: InkWell(
                         onTap: () {

@@ -60,7 +60,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       emit(state.copyWith(list: list));
     });
 
-
     on<_search>((event, emit) async{
       List<CustomerModel> result = [];
       if (event.keywordText.isEmpty) {
@@ -82,6 +81,5 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
     });
 
-   
   }
 }

@@ -30,8 +30,11 @@ class DeatileEvent with _$DeatileEvent {
 
   const factory DeatileEvent.addingCartProduct({
     required String name,
+    required int customerId,
   }) = _addingCartProduct;
 
-  const factory DeatileEvent.productCartList() = _productCartList;
+  const factory DeatileEvent.productCartList({
+    required int id,
+  }) = _productCartList;
 
 }
