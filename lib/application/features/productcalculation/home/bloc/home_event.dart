@@ -7,7 +7,9 @@ class HomeEvent with _$HomeEvent {
     required BuildContext context,
   }) = _logOut;
   
-  const factory HomeEvent.search() = _search;
+  const factory HomeEvent.search({
+    required String keywordText,
+  }) = _search;
 
   const factory HomeEvent.getCustomerList() = _getCustomerList;
 
@@ -24,11 +26,7 @@ class HomeEvent with _$HomeEvent {
 
   }) = _navigateToAddProduct;
 
-  const factory HomeEvent.navigateDeatilesPage({
-    required BuildContext context,
-    required CustomerModel customer,
-  }) = _navigateDeatilesPage;
-  
+ 
   
   
 }

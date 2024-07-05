@@ -3,8 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:list_app/application/core/widgets/app_bar.dart';
 import 'package:list_app/application/features/productcalculation/deatiles/bloc/deatile_bloc.dart';
+import 'package:list_app/application/features/productcalculation/deatiles/ui/deatile_page.dart';
 import 'package:list_app/application/features/productcalculation/home/bloc/home_bloc.dart';
 import 'package:list_app/data/model/hive/customer/customer_model.dart';
+import 'package:lottie/lottie.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -135,6 +137,7 @@ class Home extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TextField(
+                onChanged: (value) => context.read<HomeBloc>().add(HomeEvent.search(keywordText: value)),
                 style: const TextStyle(
                   fontSize: 12,
                 ),
@@ -163,10 +166,14 @@ class Home extends StatelessWidget {
                 builder: (context, state) {
                   final List<CustomerModel> customerList = state.list;
                   if (customerList.isEmpty) {
-                    return const Expanded(
+                    return Expanded(
                       child: Center(
-                        child: Text("List is empty"),
-                      ),
+                          child: Lottie.asset(
+                        'asset/lottie/Animation - 1720143196166.json',
+                        width: MediaQuery.of(context).size.height * .3,
+                        height: MediaQuery.of(context).size.height * .5,
+                        fit: BoxFit.fill,
+                      )),
                     );
                   } else {
                     return CustomCustomerList(customerList: customerList);
@@ -192,125 +199,131 @@ class CustomCustomerList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: ListView.builder(
-        itemCount: customerList.length,
-        itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: () {
-              context
-                  .read<DeatileBloc>()
-                  .add(DeatileEvent.getCurrentUser(id: customerList[index].id!));
-                  context.read<HomeBloc>().add(HomeEvent.navigateDeatilesPage(context: context, customer: customerList[index]));
-            },
-            child: Container(
-              margin: const EdgeInsets.only(bottom: 10),
-              height: 70,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey[300]!),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: ListTile(
-                title: Text(
-                  customerList[index].name,
-                  style: GoogleFonts.roboto(
-                      textStyle: const TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 10)),
-                ),
-                subtitle: Text(
-                  customerList[index].email,
-                  style: GoogleFonts.nunito(
-                      textStyle: const TextStyle(
-                          color: Colors.grey,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 8)),
-                ),
-                trailing: InkWell(
+      child: BlocBuilder<HomeBloc, HomeState>(
+        builder: (context, state) {
+          return ListView.builder(
+              itemCount: state.list.length,
+              itemBuilder: (context, index) {
+                return GestureDetector(
                   onTap: () {
-                    showDialog(
-                      context: context,
-                      builder: (context) => AlertDialog(
-                        contentPadding: const EdgeInsets.all(12),
-                        content: SizedBox(
-                          height: MediaQuery.of(context).size.height * .2,
-                          child: Column(
-                            children: [
-                              const SizedBox(height: 30),
-                              Text(
-                                "Are you sure to delete ?",
-                                textAlign: TextAlign.justify,
-                                style: GoogleFonts.aBeeZee(
-                                    textStyle: const TextStyle(
-                                  fontSize: 12,
-                                )),
-                              ),
-                              const Spacer(),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  ElevatedButton(
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
-                                    style: ButtonStyle(
-                                        backgroundColor: WidgetStatePropertyAll(
-                                            Colors.grey[500]),
-                                        shape: WidgetStatePropertyAll(
-                                            ContinuousRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(5)))),
-                                    child: Text(
-                                      'Close',
+                    context.read<DeatileBloc>().add(
+                        DeatileEvent.getCurrentUser(id: customerList[index].id!));
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) =>
+                          DeatilePage(customerModel: customerList[index]),
+                    ));
+                  },
+                  child: Container(
+                    margin: const EdgeInsets.only(bottom: 10),
+                    height: 70,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey[300]!),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: ListTile(
+                      title: Text(
+                        state.list[index].name,
+                        style: GoogleFonts.roboto(
+                            textStyle: const TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 10)),
+                      ),
+                      subtitle: Text(
+                        state.list[index].email,
+                        style: GoogleFonts.nunito(
+                            textStyle: const TextStyle(
+                                color: Colors.grey,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 8)),
+                      ),
+                      trailing: InkWell(
+                        onTap: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                              contentPadding: const EdgeInsets.all(12),
+                              content: SizedBox(
+                                height: MediaQuery.of(context).size.height * .2,
+                                child: Column(
+                                  children: [
+                                    const SizedBox(height: 30),
+                                    Text(
+                                      "Are you sure to delete ?",
+                                      textAlign: TextAlign.justify,
                                       style: GoogleFonts.aBeeZee(
                                           textStyle: const TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 8,
+                                        fontSize: 12,
                                       )),
                                     ),
-                                  ),
-                                  ElevatedButton(
-                                    onPressed: () {
-                                      context.read<HomeBloc>().add(
-                                          HomeEvent.deleteCustomer(
-                                              id: customerList[index].id!));
-                                      Navigator.of(context).pop();
-                                    },
-                                    style: ButtonStyle(
-                                        backgroundColor: WidgetStatePropertyAll(
-                                            Colors.red[100]),
-                                        shape: WidgetStatePropertyAll(
-                                            ContinuousRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(5)))),
-                                    child: Text(
-                                      'Yes',
-                                      style: GoogleFonts.aBeeZee(
-                                          textStyle: const TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 8,
-                                      )),
+                                    const Spacer(),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        ElevatedButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                          style: ButtonStyle(
+                                              backgroundColor: WidgetStatePropertyAll(
+                                                  Colors.grey[500]),
+                                              shape: WidgetStatePropertyAll(
+                                                  ContinuousRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(5)))),
+                                          child: Text(
+                                            'Close',
+                                            style: GoogleFonts.aBeeZee(
+                                                textStyle: const TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 8,
+                                            )),
+                                          ),
+                                        ),
+                                        ElevatedButton(
+                                          onPressed: () {
+                                            context.read<HomeBloc>().add(
+                                                HomeEvent.deleteCustomer(
+                                                    id: customerList[index].id!));
+                                            Navigator.of(context).pop();
+                                          },
+                                          style: ButtonStyle(
+                                              backgroundColor: WidgetStatePropertyAll(
+                                                  Colors.red[100]),
+                                              shape: WidgetStatePropertyAll(
+                                                  ContinuousRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(5)))),
+                                          child: Text(
+                                            'Yes',
+                                            style: GoogleFonts.aBeeZee(
+                                                textStyle: const TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 8,
+                                            )),
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ],
-                          ),
+                            ),
+                          );
+                        },
+                        child: const Icon(
+                          Icons.delete_outline_outlined,
+                          color: Colors.red,
+                          size: 24,
                         ),
                       ),
-                    );
-                  },
-                  child: const Icon(
-                    Icons.delete_outline_outlined,
-                    color: Colors.red,
-                    size: 24,
+                    ),
                   ),
-                ),
-              ),
-            ),
-          );
+                );
+              },
+            );
         },
       ),
     );

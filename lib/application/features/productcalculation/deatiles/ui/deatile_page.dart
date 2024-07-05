@@ -7,6 +7,7 @@ import 'package:list_app/application/features/productcalculation/deatiles/bloc/d
 import 'package:list_app/data/model/hive/cart/cart_model.dart';
 import 'package:list_app/data/model/hive/customer/customer_model.dart';
 import 'package:list_app/data/model/hive/product/product_model.dart';
+import 'package:lottie/lottie.dart';
 
 class DeatilePage extends StatelessWidget {
   final CustomerModel customerModel;
@@ -94,7 +95,13 @@ class DeatilePage extends StatelessWidget {
                   builder: (context, state) {
                     List<CartModel> productCartList = state.cartList;
                     if (productCartList.isEmpty) {
-                      return const Center(child: Text('list is empty'));
+                      return Center(
+                          child: Lottie.asset(
+                        'asset/lottie/Animation - 1720143196166.json',
+                        width: MediaQuery.of(context).size.height * .3,
+                        height: MediaQuery.of(context).size.height * .5,
+                        fit: BoxFit.fill,
+                      ));
                     } else {
                       return ListView.builder(
                         itemCount: productCartList.length,
@@ -259,9 +266,13 @@ class CustomBottomSheet extends StatelessWidget {
               builder: (context, state) {
                 final List<ProductModel> productList = state.list;
                 if (productList.isEmpty) {
-                  return const Center(
-                    child: Text('list is empty'),
-                  );
+                   return Center(
+                          child: Lottie.asset(
+                        'asset/lottie/Animation - 1720143196166.json',
+                        width: MediaQuery.of(context).size.height *.3,
+                        height: MediaQuery.of(context).size.height *.5,
+                        fit: BoxFit.fill,
+                      ));
                 } else {
                   return ListView.builder(
                     itemCount: productList.length,
