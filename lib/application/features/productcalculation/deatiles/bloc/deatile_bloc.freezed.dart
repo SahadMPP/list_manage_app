@@ -22,8 +22,11 @@ mixin _$DeatileEvent {
         cutomerUpdateNavigation,
     required TResult Function() productCartList,
     required TResult Function() productCartdelete,
-    required TResult Function() productCardAdd,
     required TResult Function(int id) getCurrentUser,
+    required TResult Function() productList,
+    required TResult Function(double price, double gst, int quantity)
+        calculateTotol,
+    required TResult Function() addingCartProduct,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,8 +35,10 @@ mixin _$DeatileEvent {
         cutomerUpdateNavigation,
     TResult? Function()? productCartList,
     TResult? Function()? productCartdelete,
-    TResult? Function()? productCardAdd,
     TResult? Function(int id)? getCurrentUser,
+    TResult? Function()? productList,
+    TResult? Function(double price, double gst, int quantity)? calculateTotol,
+    TResult? Function()? addingCartProduct,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,8 +47,10 @@ mixin _$DeatileEvent {
         cutomerUpdateNavigation,
     TResult Function()? productCartList,
     TResult Function()? productCartdelete,
-    TResult Function()? productCardAdd,
     TResult Function(int id)? getCurrentUser,
+    TResult Function()? productList,
+    TResult Function(double price, double gst, int quantity)? calculateTotol,
+    TResult Function()? addingCartProduct,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -53,8 +60,10 @@ mixin _$DeatileEvent {
         cutomerUpdateNavigation,
     required TResult Function(_productCartList value) productCartList,
     required TResult Function(_productCartdelete value) productCartdelete,
-    required TResult Function(_productCardAdd value) productCardAdd,
     required TResult Function(_getCurrentUser value) getCurrentUser,
+    required TResult Function(_productList value) productList,
+    required TResult Function(_calculateTotol value) calculateTotol,
+    required TResult Function(_addingCartProduct value) addingCartProduct,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,8 +71,10 @@ mixin _$DeatileEvent {
     TResult? Function(_cutomerUpdateNavigation value)? cutomerUpdateNavigation,
     TResult? Function(_productCartList value)? productCartList,
     TResult? Function(_productCartdelete value)? productCartdelete,
-    TResult? Function(_productCardAdd value)? productCardAdd,
     TResult? Function(_getCurrentUser value)? getCurrentUser,
+    TResult? Function(_productList value)? productList,
+    TResult? Function(_calculateTotol value)? calculateTotol,
+    TResult? Function(_addingCartProduct value)? addingCartProduct,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,8 +82,10 @@ mixin _$DeatileEvent {
     TResult Function(_cutomerUpdateNavigation value)? cutomerUpdateNavigation,
     TResult Function(_productCartList value)? productCartList,
     TResult Function(_productCartdelete value)? productCartdelete,
-    TResult Function(_productCardAdd value)? productCardAdd,
     TResult Function(_getCurrentUser value)? getCurrentUser,
+    TResult Function(_productList value)? productList,
+    TResult Function(_calculateTotol value)? calculateTotol,
+    TResult Function(_addingCartProduct value)? addingCartProduct,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -177,8 +190,11 @@ class _$cutomerUpdateNavigationImpl implements _cutomerUpdateNavigation {
         cutomerUpdateNavigation,
     required TResult Function() productCartList,
     required TResult Function() productCartdelete,
-    required TResult Function() productCardAdd,
     required TResult Function(int id) getCurrentUser,
+    required TResult Function() productList,
+    required TResult Function(double price, double gst, int quantity)
+        calculateTotol,
+    required TResult Function() addingCartProduct,
   }) {
     return cutomerUpdateNavigation(context, customerModel);
   }
@@ -190,8 +206,10 @@ class _$cutomerUpdateNavigationImpl implements _cutomerUpdateNavigation {
         cutomerUpdateNavigation,
     TResult? Function()? productCartList,
     TResult? Function()? productCartdelete,
-    TResult? Function()? productCardAdd,
     TResult? Function(int id)? getCurrentUser,
+    TResult? Function()? productList,
+    TResult? Function(double price, double gst, int quantity)? calculateTotol,
+    TResult? Function()? addingCartProduct,
   }) {
     return cutomerUpdateNavigation?.call(context, customerModel);
   }
@@ -203,8 +221,10 @@ class _$cutomerUpdateNavigationImpl implements _cutomerUpdateNavigation {
         cutomerUpdateNavigation,
     TResult Function()? productCartList,
     TResult Function()? productCartdelete,
-    TResult Function()? productCardAdd,
     TResult Function(int id)? getCurrentUser,
+    TResult Function()? productList,
+    TResult Function(double price, double gst, int quantity)? calculateTotol,
+    TResult Function()? addingCartProduct,
     required TResult orElse(),
   }) {
     if (cutomerUpdateNavigation != null) {
@@ -220,8 +240,10 @@ class _$cutomerUpdateNavigationImpl implements _cutomerUpdateNavigation {
         cutomerUpdateNavigation,
     required TResult Function(_productCartList value) productCartList,
     required TResult Function(_productCartdelete value) productCartdelete,
-    required TResult Function(_productCardAdd value) productCardAdd,
     required TResult Function(_getCurrentUser value) getCurrentUser,
+    required TResult Function(_productList value) productList,
+    required TResult Function(_calculateTotol value) calculateTotol,
+    required TResult Function(_addingCartProduct value) addingCartProduct,
   }) {
     return cutomerUpdateNavigation(this);
   }
@@ -232,8 +254,10 @@ class _$cutomerUpdateNavigationImpl implements _cutomerUpdateNavigation {
     TResult? Function(_cutomerUpdateNavigation value)? cutomerUpdateNavigation,
     TResult? Function(_productCartList value)? productCartList,
     TResult? Function(_productCartdelete value)? productCartdelete,
-    TResult? Function(_productCardAdd value)? productCardAdd,
     TResult? Function(_getCurrentUser value)? getCurrentUser,
+    TResult? Function(_productList value)? productList,
+    TResult? Function(_calculateTotol value)? calculateTotol,
+    TResult? Function(_addingCartProduct value)? addingCartProduct,
   }) {
     return cutomerUpdateNavigation?.call(this);
   }
@@ -244,8 +268,10 @@ class _$cutomerUpdateNavigationImpl implements _cutomerUpdateNavigation {
     TResult Function(_cutomerUpdateNavigation value)? cutomerUpdateNavigation,
     TResult Function(_productCartList value)? productCartList,
     TResult Function(_productCartdelete value)? productCartdelete,
-    TResult Function(_productCardAdd value)? productCardAdd,
     TResult Function(_getCurrentUser value)? getCurrentUser,
+    TResult Function(_productList value)? productList,
+    TResult Function(_calculateTotol value)? calculateTotol,
+    TResult Function(_addingCartProduct value)? addingCartProduct,
     required TResult orElse(),
   }) {
     if (cutomerUpdateNavigation != null) {
@@ -310,8 +336,11 @@ class _$productCartListImpl implements _productCartList {
         cutomerUpdateNavigation,
     required TResult Function() productCartList,
     required TResult Function() productCartdelete,
-    required TResult Function() productCardAdd,
     required TResult Function(int id) getCurrentUser,
+    required TResult Function() productList,
+    required TResult Function(double price, double gst, int quantity)
+        calculateTotol,
+    required TResult Function() addingCartProduct,
   }) {
     return productCartList();
   }
@@ -323,8 +352,10 @@ class _$productCartListImpl implements _productCartList {
         cutomerUpdateNavigation,
     TResult? Function()? productCartList,
     TResult? Function()? productCartdelete,
-    TResult? Function()? productCardAdd,
     TResult? Function(int id)? getCurrentUser,
+    TResult? Function()? productList,
+    TResult? Function(double price, double gst, int quantity)? calculateTotol,
+    TResult? Function()? addingCartProduct,
   }) {
     return productCartList?.call();
   }
@@ -336,8 +367,10 @@ class _$productCartListImpl implements _productCartList {
         cutomerUpdateNavigation,
     TResult Function()? productCartList,
     TResult Function()? productCartdelete,
-    TResult Function()? productCardAdd,
     TResult Function(int id)? getCurrentUser,
+    TResult Function()? productList,
+    TResult Function(double price, double gst, int quantity)? calculateTotol,
+    TResult Function()? addingCartProduct,
     required TResult orElse(),
   }) {
     if (productCartList != null) {
@@ -353,8 +386,10 @@ class _$productCartListImpl implements _productCartList {
         cutomerUpdateNavigation,
     required TResult Function(_productCartList value) productCartList,
     required TResult Function(_productCartdelete value) productCartdelete,
-    required TResult Function(_productCardAdd value) productCardAdd,
     required TResult Function(_getCurrentUser value) getCurrentUser,
+    required TResult Function(_productList value) productList,
+    required TResult Function(_calculateTotol value) calculateTotol,
+    required TResult Function(_addingCartProduct value) addingCartProduct,
   }) {
     return productCartList(this);
   }
@@ -365,8 +400,10 @@ class _$productCartListImpl implements _productCartList {
     TResult? Function(_cutomerUpdateNavigation value)? cutomerUpdateNavigation,
     TResult? Function(_productCartList value)? productCartList,
     TResult? Function(_productCartdelete value)? productCartdelete,
-    TResult? Function(_productCardAdd value)? productCardAdd,
     TResult? Function(_getCurrentUser value)? getCurrentUser,
+    TResult? Function(_productList value)? productList,
+    TResult? Function(_calculateTotol value)? calculateTotol,
+    TResult? Function(_addingCartProduct value)? addingCartProduct,
   }) {
     return productCartList?.call(this);
   }
@@ -377,8 +414,10 @@ class _$productCartListImpl implements _productCartList {
     TResult Function(_cutomerUpdateNavigation value)? cutomerUpdateNavigation,
     TResult Function(_productCartList value)? productCartList,
     TResult Function(_productCartdelete value)? productCartdelete,
-    TResult Function(_productCardAdd value)? productCardAdd,
     TResult Function(_getCurrentUser value)? getCurrentUser,
+    TResult Function(_productList value)? productList,
+    TResult Function(_calculateTotol value)? calculateTotol,
+    TResult Function(_addingCartProduct value)? addingCartProduct,
     required TResult orElse(),
   }) {
     if (productCartList != null) {
@@ -434,8 +473,11 @@ class _$productCartdeleteImpl implements _productCartdelete {
         cutomerUpdateNavigation,
     required TResult Function() productCartList,
     required TResult Function() productCartdelete,
-    required TResult Function() productCardAdd,
     required TResult Function(int id) getCurrentUser,
+    required TResult Function() productList,
+    required TResult Function(double price, double gst, int quantity)
+        calculateTotol,
+    required TResult Function() addingCartProduct,
   }) {
     return productCartdelete();
   }
@@ -447,8 +489,10 @@ class _$productCartdeleteImpl implements _productCartdelete {
         cutomerUpdateNavigation,
     TResult? Function()? productCartList,
     TResult? Function()? productCartdelete,
-    TResult? Function()? productCardAdd,
     TResult? Function(int id)? getCurrentUser,
+    TResult? Function()? productList,
+    TResult? Function(double price, double gst, int quantity)? calculateTotol,
+    TResult? Function()? addingCartProduct,
   }) {
     return productCartdelete?.call();
   }
@@ -460,8 +504,10 @@ class _$productCartdeleteImpl implements _productCartdelete {
         cutomerUpdateNavigation,
     TResult Function()? productCartList,
     TResult Function()? productCartdelete,
-    TResult Function()? productCardAdd,
     TResult Function(int id)? getCurrentUser,
+    TResult Function()? productList,
+    TResult Function(double price, double gst, int quantity)? calculateTotol,
+    TResult Function()? addingCartProduct,
     required TResult orElse(),
   }) {
     if (productCartdelete != null) {
@@ -477,8 +523,10 @@ class _$productCartdeleteImpl implements _productCartdelete {
         cutomerUpdateNavigation,
     required TResult Function(_productCartList value) productCartList,
     required TResult Function(_productCartdelete value) productCartdelete,
-    required TResult Function(_productCardAdd value) productCardAdd,
     required TResult Function(_getCurrentUser value) getCurrentUser,
+    required TResult Function(_productList value) productList,
+    required TResult Function(_calculateTotol value) calculateTotol,
+    required TResult Function(_addingCartProduct value) addingCartProduct,
   }) {
     return productCartdelete(this);
   }
@@ -489,8 +537,10 @@ class _$productCartdeleteImpl implements _productCartdelete {
     TResult? Function(_cutomerUpdateNavigation value)? cutomerUpdateNavigation,
     TResult? Function(_productCartList value)? productCartList,
     TResult? Function(_productCartdelete value)? productCartdelete,
-    TResult? Function(_productCardAdd value)? productCardAdd,
     TResult? Function(_getCurrentUser value)? getCurrentUser,
+    TResult? Function(_productList value)? productList,
+    TResult? Function(_calculateTotol value)? calculateTotol,
+    TResult? Function(_addingCartProduct value)? addingCartProduct,
   }) {
     return productCartdelete?.call(this);
   }
@@ -501,8 +551,10 @@ class _$productCartdeleteImpl implements _productCartdelete {
     TResult Function(_cutomerUpdateNavigation value)? cutomerUpdateNavigation,
     TResult Function(_productCartList value)? productCartList,
     TResult Function(_productCartdelete value)? productCartdelete,
-    TResult Function(_productCardAdd value)? productCardAdd,
     TResult Function(_getCurrentUser value)? getCurrentUser,
+    TResult Function(_productList value)? productList,
+    TResult Function(_calculateTotol value)? calculateTotol,
+    TResult Function(_addingCartProduct value)? addingCartProduct,
     required TResult orElse(),
   }) {
     if (productCartdelete != null) {
@@ -514,130 +566,6 @@ class _$productCartdeleteImpl implements _productCartdelete {
 
 abstract class _productCartdelete implements DeatileEvent {
   const factory _productCartdelete() = _$productCartdeleteImpl;
-}
-
-/// @nodoc
-abstract class _$$productCardAddImplCopyWith<$Res> {
-  factory _$$productCardAddImplCopyWith(_$productCardAddImpl value,
-          $Res Function(_$productCardAddImpl) then) =
-      __$$productCardAddImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$productCardAddImplCopyWithImpl<$Res>
-    extends _$DeatileEventCopyWithImpl<$Res, _$productCardAddImpl>
-    implements _$$productCardAddImplCopyWith<$Res> {
-  __$$productCardAddImplCopyWithImpl(
-      _$productCardAddImpl _value, $Res Function(_$productCardAddImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$productCardAddImpl implements _productCardAdd {
-  const _$productCardAddImpl();
-
-  @override
-  String toString() {
-    return 'DeatileEvent.productCardAdd()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$productCardAddImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(BuildContext context, CustomerModel customerModel)
-        cutomerUpdateNavigation,
-    required TResult Function() productCartList,
-    required TResult Function() productCartdelete,
-    required TResult Function() productCardAdd,
-    required TResult Function(int id) getCurrentUser,
-  }) {
-    return productCardAdd();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(BuildContext context, CustomerModel customerModel)?
-        cutomerUpdateNavigation,
-    TResult? Function()? productCartList,
-    TResult? Function()? productCartdelete,
-    TResult? Function()? productCardAdd,
-    TResult? Function(int id)? getCurrentUser,
-  }) {
-    return productCardAdd?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(BuildContext context, CustomerModel customerModel)?
-        cutomerUpdateNavigation,
-    TResult Function()? productCartList,
-    TResult Function()? productCartdelete,
-    TResult Function()? productCardAdd,
-    TResult Function(int id)? getCurrentUser,
-    required TResult orElse(),
-  }) {
-    if (productCardAdd != null) {
-      return productCardAdd();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_cutomerUpdateNavigation value)
-        cutomerUpdateNavigation,
-    required TResult Function(_productCartList value) productCartList,
-    required TResult Function(_productCartdelete value) productCartdelete,
-    required TResult Function(_productCardAdd value) productCardAdd,
-    required TResult Function(_getCurrentUser value) getCurrentUser,
-  }) {
-    return productCardAdd(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_cutomerUpdateNavigation value)? cutomerUpdateNavigation,
-    TResult? Function(_productCartList value)? productCartList,
-    TResult? Function(_productCartdelete value)? productCartdelete,
-    TResult? Function(_productCardAdd value)? productCardAdd,
-    TResult? Function(_getCurrentUser value)? getCurrentUser,
-  }) {
-    return productCardAdd?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_cutomerUpdateNavigation value)? cutomerUpdateNavigation,
-    TResult Function(_productCartList value)? productCartList,
-    TResult Function(_productCartdelete value)? productCartdelete,
-    TResult Function(_productCardAdd value)? productCardAdd,
-    TResult Function(_getCurrentUser value)? getCurrentUser,
-    required TResult orElse(),
-  }) {
-    if (productCardAdd != null) {
-      return productCardAdd(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _productCardAdd implements DeatileEvent {
-  const factory _productCardAdd() = _$productCardAddImpl;
 }
 
 /// @nodoc
@@ -709,8 +637,11 @@ class _$getCurrentUserImpl implements _getCurrentUser {
         cutomerUpdateNavigation,
     required TResult Function() productCartList,
     required TResult Function() productCartdelete,
-    required TResult Function() productCardAdd,
     required TResult Function(int id) getCurrentUser,
+    required TResult Function() productList,
+    required TResult Function(double price, double gst, int quantity)
+        calculateTotol,
+    required TResult Function() addingCartProduct,
   }) {
     return getCurrentUser(id);
   }
@@ -722,8 +653,10 @@ class _$getCurrentUserImpl implements _getCurrentUser {
         cutomerUpdateNavigation,
     TResult? Function()? productCartList,
     TResult? Function()? productCartdelete,
-    TResult? Function()? productCardAdd,
     TResult? Function(int id)? getCurrentUser,
+    TResult? Function()? productList,
+    TResult? Function(double price, double gst, int quantity)? calculateTotol,
+    TResult? Function()? addingCartProduct,
   }) {
     return getCurrentUser?.call(id);
   }
@@ -735,8 +668,10 @@ class _$getCurrentUserImpl implements _getCurrentUser {
         cutomerUpdateNavigation,
     TResult Function()? productCartList,
     TResult Function()? productCartdelete,
-    TResult Function()? productCardAdd,
     TResult Function(int id)? getCurrentUser,
+    TResult Function()? productList,
+    TResult Function(double price, double gst, int quantity)? calculateTotol,
+    TResult Function()? addingCartProduct,
     required TResult orElse(),
   }) {
     if (getCurrentUser != null) {
@@ -752,8 +687,10 @@ class _$getCurrentUserImpl implements _getCurrentUser {
         cutomerUpdateNavigation,
     required TResult Function(_productCartList value) productCartList,
     required TResult Function(_productCartdelete value) productCartdelete,
-    required TResult Function(_productCardAdd value) productCardAdd,
     required TResult Function(_getCurrentUser value) getCurrentUser,
+    required TResult Function(_productList value) productList,
+    required TResult Function(_calculateTotol value) calculateTotol,
+    required TResult Function(_addingCartProduct value) addingCartProduct,
   }) {
     return getCurrentUser(this);
   }
@@ -764,8 +701,10 @@ class _$getCurrentUserImpl implements _getCurrentUser {
     TResult? Function(_cutomerUpdateNavigation value)? cutomerUpdateNavigation,
     TResult? Function(_productCartList value)? productCartList,
     TResult? Function(_productCartdelete value)? productCartdelete,
-    TResult? Function(_productCardAdd value)? productCardAdd,
     TResult? Function(_getCurrentUser value)? getCurrentUser,
+    TResult? Function(_productList value)? productList,
+    TResult? Function(_calculateTotol value)? calculateTotol,
+    TResult? Function(_addingCartProduct value)? addingCartProduct,
   }) {
     return getCurrentUser?.call(this);
   }
@@ -776,8 +715,10 @@ class _$getCurrentUserImpl implements _getCurrentUser {
     TResult Function(_cutomerUpdateNavigation value)? cutomerUpdateNavigation,
     TResult Function(_productCartList value)? productCartList,
     TResult Function(_productCartdelete value)? productCartdelete,
-    TResult Function(_productCardAdd value)? productCardAdd,
     TResult Function(_getCurrentUser value)? getCurrentUser,
+    TResult Function(_productList value)? productList,
+    TResult Function(_calculateTotol value)? calculateTotol,
+    TResult Function(_addingCartProduct value)? addingCartProduct,
     required TResult orElse(),
   }) {
     if (getCurrentUser != null) {
@@ -797,8 +738,477 @@ abstract class _getCurrentUser implements DeatileEvent {
 }
 
 /// @nodoc
+abstract class _$$productListImplCopyWith<$Res> {
+  factory _$$productListImplCopyWith(
+          _$productListImpl value, $Res Function(_$productListImpl) then) =
+      __$$productListImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$productListImplCopyWithImpl<$Res>
+    extends _$DeatileEventCopyWithImpl<$Res, _$productListImpl>
+    implements _$$productListImplCopyWith<$Res> {
+  __$$productListImplCopyWithImpl(
+      _$productListImpl _value, $Res Function(_$productListImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$productListImpl implements _productList {
+  const _$productListImpl();
+
+  @override
+  String toString() {
+    return 'DeatileEvent.productList()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$productListImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(BuildContext context, CustomerModel customerModel)
+        cutomerUpdateNavigation,
+    required TResult Function() productCartList,
+    required TResult Function() productCartdelete,
+    required TResult Function(int id) getCurrentUser,
+    required TResult Function() productList,
+    required TResult Function(double price, double gst, int quantity)
+        calculateTotol,
+    required TResult Function() addingCartProduct,
+  }) {
+    return productList();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(BuildContext context, CustomerModel customerModel)?
+        cutomerUpdateNavigation,
+    TResult? Function()? productCartList,
+    TResult? Function()? productCartdelete,
+    TResult? Function(int id)? getCurrentUser,
+    TResult? Function()? productList,
+    TResult? Function(double price, double gst, int quantity)? calculateTotol,
+    TResult? Function()? addingCartProduct,
+  }) {
+    return productList?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(BuildContext context, CustomerModel customerModel)?
+        cutomerUpdateNavigation,
+    TResult Function()? productCartList,
+    TResult Function()? productCartdelete,
+    TResult Function(int id)? getCurrentUser,
+    TResult Function()? productList,
+    TResult Function(double price, double gst, int quantity)? calculateTotol,
+    TResult Function()? addingCartProduct,
+    required TResult orElse(),
+  }) {
+    if (productList != null) {
+      return productList();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_cutomerUpdateNavigation value)
+        cutomerUpdateNavigation,
+    required TResult Function(_productCartList value) productCartList,
+    required TResult Function(_productCartdelete value) productCartdelete,
+    required TResult Function(_getCurrentUser value) getCurrentUser,
+    required TResult Function(_productList value) productList,
+    required TResult Function(_calculateTotol value) calculateTotol,
+    required TResult Function(_addingCartProduct value) addingCartProduct,
+  }) {
+    return productList(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_cutomerUpdateNavigation value)? cutomerUpdateNavigation,
+    TResult? Function(_productCartList value)? productCartList,
+    TResult? Function(_productCartdelete value)? productCartdelete,
+    TResult? Function(_getCurrentUser value)? getCurrentUser,
+    TResult? Function(_productList value)? productList,
+    TResult? Function(_calculateTotol value)? calculateTotol,
+    TResult? Function(_addingCartProduct value)? addingCartProduct,
+  }) {
+    return productList?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_cutomerUpdateNavigation value)? cutomerUpdateNavigation,
+    TResult Function(_productCartList value)? productCartList,
+    TResult Function(_productCartdelete value)? productCartdelete,
+    TResult Function(_getCurrentUser value)? getCurrentUser,
+    TResult Function(_productList value)? productList,
+    TResult Function(_calculateTotol value)? calculateTotol,
+    TResult Function(_addingCartProduct value)? addingCartProduct,
+    required TResult orElse(),
+  }) {
+    if (productList != null) {
+      return productList(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _productList implements DeatileEvent {
+  const factory _productList() = _$productListImpl;
+}
+
+/// @nodoc
+abstract class _$$calculateTotolImplCopyWith<$Res> {
+  factory _$$calculateTotolImplCopyWith(_$calculateTotolImpl value,
+          $Res Function(_$calculateTotolImpl) then) =
+      __$$calculateTotolImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({double price, double gst, int quantity});
+}
+
+/// @nodoc
+class __$$calculateTotolImplCopyWithImpl<$Res>
+    extends _$DeatileEventCopyWithImpl<$Res, _$calculateTotolImpl>
+    implements _$$calculateTotolImplCopyWith<$Res> {
+  __$$calculateTotolImplCopyWithImpl(
+      _$calculateTotolImpl _value, $Res Function(_$calculateTotolImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? price = null,
+    Object? gst = null,
+    Object? quantity = null,
+  }) {
+    return _then(_$calculateTotolImpl(
+      price: null == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as double,
+      gst: null == gst
+          ? _value.gst
+          : gst // ignore: cast_nullable_to_non_nullable
+              as double,
+      quantity: null == quantity
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$calculateTotolImpl implements _calculateTotol {
+  const _$calculateTotolImpl(
+      {required this.price, required this.gst, required this.quantity});
+
+  @override
+  final double price;
+  @override
+  final double gst;
+  @override
+  final int quantity;
+
+  @override
+  String toString() {
+    return 'DeatileEvent.calculateTotol(price: $price, gst: $gst, quantity: $quantity)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$calculateTotolImpl &&
+            (identical(other.price, price) || other.price == price) &&
+            (identical(other.gst, gst) || other.gst == gst) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, price, gst, quantity);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$calculateTotolImplCopyWith<_$calculateTotolImpl> get copyWith =>
+      __$$calculateTotolImplCopyWithImpl<_$calculateTotolImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(BuildContext context, CustomerModel customerModel)
+        cutomerUpdateNavigation,
+    required TResult Function() productCartList,
+    required TResult Function() productCartdelete,
+    required TResult Function(int id) getCurrentUser,
+    required TResult Function() productList,
+    required TResult Function(double price, double gst, int quantity)
+        calculateTotol,
+    required TResult Function() addingCartProduct,
+  }) {
+    return calculateTotol(price, gst, quantity);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(BuildContext context, CustomerModel customerModel)?
+        cutomerUpdateNavigation,
+    TResult? Function()? productCartList,
+    TResult? Function()? productCartdelete,
+    TResult? Function(int id)? getCurrentUser,
+    TResult? Function()? productList,
+    TResult? Function(double price, double gst, int quantity)? calculateTotol,
+    TResult? Function()? addingCartProduct,
+  }) {
+    return calculateTotol?.call(price, gst, quantity);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(BuildContext context, CustomerModel customerModel)?
+        cutomerUpdateNavigation,
+    TResult Function()? productCartList,
+    TResult Function()? productCartdelete,
+    TResult Function(int id)? getCurrentUser,
+    TResult Function()? productList,
+    TResult Function(double price, double gst, int quantity)? calculateTotol,
+    TResult Function()? addingCartProduct,
+    required TResult orElse(),
+  }) {
+    if (calculateTotol != null) {
+      return calculateTotol(price, gst, quantity);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_cutomerUpdateNavigation value)
+        cutomerUpdateNavigation,
+    required TResult Function(_productCartList value) productCartList,
+    required TResult Function(_productCartdelete value) productCartdelete,
+    required TResult Function(_getCurrentUser value) getCurrentUser,
+    required TResult Function(_productList value) productList,
+    required TResult Function(_calculateTotol value) calculateTotol,
+    required TResult Function(_addingCartProduct value) addingCartProduct,
+  }) {
+    return calculateTotol(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_cutomerUpdateNavigation value)? cutomerUpdateNavigation,
+    TResult? Function(_productCartList value)? productCartList,
+    TResult? Function(_productCartdelete value)? productCartdelete,
+    TResult? Function(_getCurrentUser value)? getCurrentUser,
+    TResult? Function(_productList value)? productList,
+    TResult? Function(_calculateTotol value)? calculateTotol,
+    TResult? Function(_addingCartProduct value)? addingCartProduct,
+  }) {
+    return calculateTotol?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_cutomerUpdateNavigation value)? cutomerUpdateNavigation,
+    TResult Function(_productCartList value)? productCartList,
+    TResult Function(_productCartdelete value)? productCartdelete,
+    TResult Function(_getCurrentUser value)? getCurrentUser,
+    TResult Function(_productList value)? productList,
+    TResult Function(_calculateTotol value)? calculateTotol,
+    TResult Function(_addingCartProduct value)? addingCartProduct,
+    required TResult orElse(),
+  }) {
+    if (calculateTotol != null) {
+      return calculateTotol(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _calculateTotol implements DeatileEvent {
+  const factory _calculateTotol(
+      {required final double price,
+      required final double gst,
+      required final int quantity}) = _$calculateTotolImpl;
+
+  double get price;
+  double get gst;
+  int get quantity;
+  @JsonKey(ignore: true)
+  _$$calculateTotolImplCopyWith<_$calculateTotolImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$addingCartProductImplCopyWith<$Res> {
+  factory _$$addingCartProductImplCopyWith(_$addingCartProductImpl value,
+          $Res Function(_$addingCartProductImpl) then) =
+      __$$addingCartProductImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$addingCartProductImplCopyWithImpl<$Res>
+    extends _$DeatileEventCopyWithImpl<$Res, _$addingCartProductImpl>
+    implements _$$addingCartProductImplCopyWith<$Res> {
+  __$$addingCartProductImplCopyWithImpl(_$addingCartProductImpl _value,
+      $Res Function(_$addingCartProductImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$addingCartProductImpl implements _addingCartProduct {
+  const _$addingCartProductImpl();
+
+  @override
+  String toString() {
+    return 'DeatileEvent.addingCartProduct()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$addingCartProductImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(BuildContext context, CustomerModel customerModel)
+        cutomerUpdateNavigation,
+    required TResult Function() productCartList,
+    required TResult Function() productCartdelete,
+    required TResult Function(int id) getCurrentUser,
+    required TResult Function() productList,
+    required TResult Function(double price, double gst, int quantity)
+        calculateTotol,
+    required TResult Function() addingCartProduct,
+  }) {
+    return addingCartProduct();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(BuildContext context, CustomerModel customerModel)?
+        cutomerUpdateNavigation,
+    TResult? Function()? productCartList,
+    TResult? Function()? productCartdelete,
+    TResult? Function(int id)? getCurrentUser,
+    TResult? Function()? productList,
+    TResult? Function(double price, double gst, int quantity)? calculateTotol,
+    TResult? Function()? addingCartProduct,
+  }) {
+    return addingCartProduct?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(BuildContext context, CustomerModel customerModel)?
+        cutomerUpdateNavigation,
+    TResult Function()? productCartList,
+    TResult Function()? productCartdelete,
+    TResult Function(int id)? getCurrentUser,
+    TResult Function()? productList,
+    TResult Function(double price, double gst, int quantity)? calculateTotol,
+    TResult Function()? addingCartProduct,
+    required TResult orElse(),
+  }) {
+    if (addingCartProduct != null) {
+      return addingCartProduct();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_cutomerUpdateNavigation value)
+        cutomerUpdateNavigation,
+    required TResult Function(_productCartList value) productCartList,
+    required TResult Function(_productCartdelete value) productCartdelete,
+    required TResult Function(_getCurrentUser value) getCurrentUser,
+    required TResult Function(_productList value) productList,
+    required TResult Function(_calculateTotol value) calculateTotol,
+    required TResult Function(_addingCartProduct value) addingCartProduct,
+  }) {
+    return addingCartProduct(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_cutomerUpdateNavigation value)? cutomerUpdateNavigation,
+    TResult? Function(_productCartList value)? productCartList,
+    TResult? Function(_productCartdelete value)? productCartdelete,
+    TResult? Function(_getCurrentUser value)? getCurrentUser,
+    TResult? Function(_productList value)? productList,
+    TResult? Function(_calculateTotol value)? calculateTotol,
+    TResult? Function(_addingCartProduct value)? addingCartProduct,
+  }) {
+    return addingCartProduct?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_cutomerUpdateNavigation value)? cutomerUpdateNavigation,
+    TResult Function(_productCartList value)? productCartList,
+    TResult Function(_productCartdelete value)? productCartdelete,
+    TResult Function(_getCurrentUser value)? getCurrentUser,
+    TResult Function(_productList value)? productList,
+    TResult Function(_calculateTotol value)? calculateTotol,
+    TResult Function(_addingCartProduct value)? addingCartProduct,
+    required TResult orElse(),
+  }) {
+    if (addingCartProduct != null) {
+      return addingCartProduct(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _addingCartProduct implements DeatileEvent {
+  const factory _addingCartProduct() = _$addingCartProductImpl;
+}
+
+/// @nodoc
 mixin _$DeatileState {
   CustomerModel? get customer => throw _privateConstructorUsedError;
+  List<ProductModel> get list => throw _privateConstructorUsedError;
+  int get totelPrice => throw _privateConstructorUsedError;
+  int get quantity => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $DeatileStateCopyWith<DeatileState> get copyWith =>
@@ -811,7 +1221,11 @@ abstract class $DeatileStateCopyWith<$Res> {
           DeatileState value, $Res Function(DeatileState) then) =
       _$DeatileStateCopyWithImpl<$Res, DeatileState>;
   @useResult
-  $Res call({CustomerModel? customer});
+  $Res call(
+      {CustomerModel? customer,
+      List<ProductModel> list,
+      int totelPrice,
+      int quantity});
 }
 
 /// @nodoc
@@ -828,12 +1242,27 @@ class _$DeatileStateCopyWithImpl<$Res, $Val extends DeatileState>
   @override
   $Res call({
     Object? customer = freezed,
+    Object? list = null,
+    Object? totelPrice = null,
+    Object? quantity = null,
   }) {
     return _then(_value.copyWith(
       customer: freezed == customer
           ? _value.customer
           : customer // ignore: cast_nullable_to_non_nullable
               as CustomerModel?,
+      list: null == list
+          ? _value.list
+          : list // ignore: cast_nullable_to_non_nullable
+              as List<ProductModel>,
+      totelPrice: null == totelPrice
+          ? _value.totelPrice
+          : totelPrice // ignore: cast_nullable_to_non_nullable
+              as int,
+      quantity: null == quantity
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -846,7 +1275,11 @@ abstract class _$$DeatileStateImplCopyWith<$Res>
       __$$DeatileStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({CustomerModel? customer});
+  $Res call(
+      {CustomerModel? customer,
+      List<ProductModel> list,
+      int totelPrice,
+      int quantity});
 }
 
 /// @nodoc
@@ -861,12 +1294,27 @@ class __$$DeatileStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? customer = freezed,
+    Object? list = null,
+    Object? totelPrice = null,
+    Object? quantity = null,
   }) {
     return _then(_$DeatileStateImpl(
       customer: freezed == customer
           ? _value.customer
           : customer // ignore: cast_nullable_to_non_nullable
               as CustomerModel?,
+      list: null == list
+          ? _value._list
+          : list // ignore: cast_nullable_to_non_nullable
+              as List<ProductModel>,
+      totelPrice: null == totelPrice
+          ? _value.totelPrice
+          : totelPrice // ignore: cast_nullable_to_non_nullable
+              as int,
+      quantity: null == quantity
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -874,14 +1322,31 @@ class __$$DeatileStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$DeatileStateImpl implements _DeatileState {
-  const _$DeatileStateImpl({this.customer});
+  const _$DeatileStateImpl(
+      {this.customer,
+      required final List<ProductModel> list,
+      required this.totelPrice,
+      required this.quantity})
+      : _list = list;
 
   @override
   final CustomerModel? customer;
+  final List<ProductModel> _list;
+  @override
+  List<ProductModel> get list {
+    if (_list is EqualUnmodifiableListView) return _list;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_list);
+  }
+
+  @override
+  final int totelPrice;
+  @override
+  final int quantity;
 
   @override
   String toString() {
-    return 'DeatileState(customer: $customer)';
+    return 'DeatileState(customer: $customer, list: $list, totelPrice: $totelPrice, quantity: $quantity)';
   }
 
   @override
@@ -890,11 +1355,17 @@ class _$DeatileStateImpl implements _DeatileState {
         (other.runtimeType == runtimeType &&
             other is _$DeatileStateImpl &&
             (identical(other.customer, customer) ||
-                other.customer == customer));
+                other.customer == customer) &&
+            const DeepCollectionEquality().equals(other._list, _list) &&
+            (identical(other.totelPrice, totelPrice) ||
+                other.totelPrice == totelPrice) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, customer);
+  int get hashCode => Object.hash(runtimeType, customer,
+      const DeepCollectionEquality().hash(_list), totelPrice, quantity);
 
   @JsonKey(ignore: true)
   @override
@@ -904,11 +1375,20 @@ class _$DeatileStateImpl implements _DeatileState {
 }
 
 abstract class _DeatileState implements DeatileState {
-  const factory _DeatileState({final CustomerModel? customer}) =
-      _$DeatileStateImpl;
+  const factory _DeatileState(
+      {final CustomerModel? customer,
+      required final List<ProductModel> list,
+      required final int totelPrice,
+      required final int quantity}) = _$DeatileStateImpl;
 
   @override
   CustomerModel? get customer;
+  @override
+  List<ProductModel> get list;
+  @override
+  int get totelPrice;
+  @override
+  int get quantity;
   @override
   @JsonKey(ignore: true)
   _$$DeatileStateImplCopyWith<_$DeatileStateImpl> get copyWith =>

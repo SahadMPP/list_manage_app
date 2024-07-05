@@ -23,6 +23,12 @@ class HomeEvent with _$HomeEvent {
     required BuildContext context,
 
   }) = _navigateToAddProduct;
+
+  const factory HomeEvent.navigateDeatilesPage({
+    required BuildContext context,
+    required CustomerModel customer,
+  }) = _navigateDeatilesPage;
+  
   
   
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:list_app/application/core/widgets/app_bar.dart';
-import 'package:list_app/application/features/productcalculation/deatiles/ui/deatile_page.dart';
+import 'package:list_app/application/features/productcalculation/deatiles/bloc/deatile_bloc.dart';
 import 'package:list_app/application/features/productcalculation/home/bloc/home_bloc.dart';
 import 'package:list_app/data/model/hive/customer/customer_model.dart';
 
@@ -196,7 +196,12 @@ class CustomCustomerList extends StatelessWidget {
         itemCount: customerList.length,
         itemBuilder: (context, index) {
           return GestureDetector(
-            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  DeatilePage(customerModel:customerList[index] ,),)),
+            onTap: () {
+              context
+                  .read<DeatileBloc>()
+                  .add(DeatileEvent.getCurrentUser(id: customerList[index].id!));
+                  context.read<HomeBloc>().add(HomeEvent.navigateDeatilesPage(context: context, customer: customerList[index]));
+            },
             child: Container(
               margin: const EdgeInsets.only(bottom: 10),
               height: 70,
@@ -229,9 +234,7 @@ class CustomCustomerList extends StatelessWidget {
                       builder: (context) => AlertDialog(
                         contentPadding: const EdgeInsets.all(12),
                         content: SizedBox(
-                          height:
-                              MediaQuery.of(context).size.height *
-                                  .2,
+                          height: MediaQuery.of(context).size.height * .2,
                           child: Column(
                             children: [
                               const SizedBox(height: 30),
@@ -253,20 +256,16 @@ class CustomCustomerList extends StatelessWidget {
                                       Navigator.of(context).pop();
                                     },
                                     style: ButtonStyle(
-                                        backgroundColor:
-                                            WidgetStatePropertyAll(
-                                                Colors.grey[500]),
+                                        backgroundColor: WidgetStatePropertyAll(
+                                            Colors.grey[500]),
                                         shape: WidgetStatePropertyAll(
                                             ContinuousRectangleBorder(
                                                 borderRadius:
-                                                    BorderRadius
-                                                        .circular(
-                                                            5)))),
+                                                    BorderRadius.circular(5)))),
                                     child: Text(
                                       'Close',
                                       style: GoogleFonts.aBeeZee(
-                                          textStyle:
-                                              const TextStyle(
+                                          textStyle: const TextStyle(
                                         color: Colors.white,
                                         fontSize: 8,
                                       )),
@@ -274,30 +273,22 @@ class CustomCustomerList extends StatelessWidget {
                                   ),
                                   ElevatedButton(
                                     onPressed: () {
-                                      context
-                                          .read<HomeBloc>()
-                                          .add(HomeEvent
-                                              .deleteCustomer(
-                                                  id: customerList[
-                                                          index]
-                                                      .id!));
+                                      context.read<HomeBloc>().add(
+                                          HomeEvent.deleteCustomer(
+                                              id: customerList[index].id!));
                                       Navigator.of(context).pop();
                                     },
                                     style: ButtonStyle(
-                                        backgroundColor:
-                                            WidgetStatePropertyAll(
-                                                Colors.red[100]),
+                                        backgroundColor: WidgetStatePropertyAll(
+                                            Colors.red[100]),
                                         shape: WidgetStatePropertyAll(
                                             ContinuousRectangleBorder(
                                                 borderRadius:
-                                                    BorderRadius
-                                                        .circular(
-                                                            5)))),
+                                                    BorderRadius.circular(5)))),
                                     child: Text(
                                       'Yes',
                                       style: GoogleFonts.aBeeZee(
-                                          textStyle:
-                                              const TextStyle(
+                                          textStyle: const TextStyle(
                                         color: Colors.white,
                                         fontSize: 8,
                                       )),

@@ -11,6 +11,8 @@ part 'add_coustomer_bloc.freezed.dart';
 
 class AddCoustomerBloc extends Bloc<AddCoustomerEvent, AddCoustomerState> {
   AddCoustomerBloc() : super(const _Initial()) {
+
+    
     on<_addingcustomer>((event, emit) async {
       final customerDB = await Hive.openBox<CustomerModel>("customer_db");
       final data = CustomerModel(

@@ -19,12 +19,10 @@ class AddProductBloc extends Bloc<AddProductEvent, AddProductState> {
       final db = await Hive.openBox<ProductModel>('product_db');
       final int id = await db.add(data);
       final value = db.get(id);
-      print(
-          '${value!.name} ${value.price} ${value.gstPercentage}...........................................');
       db.put(
           id,
           ProductModel(
-              name: value.name,
+              name: value!.name,
               price: value.price,
               gstPercentage: value.gstPercentage,
               id: id));

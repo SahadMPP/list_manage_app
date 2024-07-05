@@ -14,7 +14,6 @@ class ProductAddingPage extends StatelessWidget {
     TextEditingController nameController = TextEditingController();
     TextEditingController priceController = TextEditingController();
     TextEditingController gstController = TextEditingController();
-
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: appbar(title: 'Add product'),

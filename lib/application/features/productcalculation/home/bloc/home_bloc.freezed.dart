@@ -24,6 +24,8 @@ mixin _$HomeEvent {
     required TResult Function(int id) deleteCustomer,
     required TResult Function(BuildContext context) navigateToAddCustomer,
     required TResult Function(BuildContext context) navigateToAddProduct,
+    required TResult Function(BuildContext context, CustomerModel customer)
+        navigateDeatilesPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,6 +36,8 @@ mixin _$HomeEvent {
     TResult? Function(int id)? deleteCustomer,
     TResult? Function(BuildContext context)? navigateToAddCustomer,
     TResult? Function(BuildContext context)? navigateToAddProduct,
+    TResult? Function(BuildContext context, CustomerModel customer)?
+        navigateDeatilesPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +48,8 @@ mixin _$HomeEvent {
     TResult Function(int id)? deleteCustomer,
     TResult Function(BuildContext context)? navigateToAddCustomer,
     TResult Function(BuildContext context)? navigateToAddProduct,
+    TResult Function(BuildContext context, CustomerModel customer)?
+        navigateDeatilesPage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -56,6 +62,7 @@ mixin _$HomeEvent {
     required TResult Function(_navigateToAddCustomer value)
         navigateToAddCustomer,
     required TResult Function(_navigateToAddProduct value) navigateToAddProduct,
+    required TResult Function(_navigateDeatilesPage value) navigateDeatilesPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,6 +73,7 @@ mixin _$HomeEvent {
     TResult? Function(_deleteCustomer value)? deleteCustomer,
     TResult? Function(_navigateToAddCustomer value)? navigateToAddCustomer,
     TResult? Function(_navigateToAddProduct value)? navigateToAddProduct,
+    TResult? Function(_navigateDeatilesPage value)? navigateDeatilesPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -76,6 +84,7 @@ mixin _$HomeEvent {
     TResult Function(_deleteCustomer value)? deleteCustomer,
     TResult Function(_navigateToAddCustomer value)? navigateToAddCustomer,
     TResult Function(_navigateToAddProduct value)? navigateToAddProduct,
+    TResult Function(_navigateDeatilesPage value)? navigateDeatilesPage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -168,6 +177,8 @@ class _$logOutImpl implements _logOut {
     required TResult Function(int id) deleteCustomer,
     required TResult Function(BuildContext context) navigateToAddCustomer,
     required TResult Function(BuildContext context) navigateToAddProduct,
+    required TResult Function(BuildContext context, CustomerModel customer)
+        navigateDeatilesPage,
   }) {
     return logOut(context);
   }
@@ -181,6 +192,8 @@ class _$logOutImpl implements _logOut {
     TResult? Function(int id)? deleteCustomer,
     TResult? Function(BuildContext context)? navigateToAddCustomer,
     TResult? Function(BuildContext context)? navigateToAddProduct,
+    TResult? Function(BuildContext context, CustomerModel customer)?
+        navigateDeatilesPage,
   }) {
     return logOut?.call(context);
   }
@@ -194,6 +207,8 @@ class _$logOutImpl implements _logOut {
     TResult Function(int id)? deleteCustomer,
     TResult Function(BuildContext context)? navigateToAddCustomer,
     TResult Function(BuildContext context)? navigateToAddProduct,
+    TResult Function(BuildContext context, CustomerModel customer)?
+        navigateDeatilesPage,
     required TResult orElse(),
   }) {
     if (logOut != null) {
@@ -212,6 +227,7 @@ class _$logOutImpl implements _logOut {
     required TResult Function(_navigateToAddCustomer value)
         navigateToAddCustomer,
     required TResult Function(_navigateToAddProduct value) navigateToAddProduct,
+    required TResult Function(_navigateDeatilesPage value) navigateDeatilesPage,
   }) {
     return logOut(this);
   }
@@ -225,6 +241,7 @@ class _$logOutImpl implements _logOut {
     TResult? Function(_deleteCustomer value)? deleteCustomer,
     TResult? Function(_navigateToAddCustomer value)? navigateToAddCustomer,
     TResult? Function(_navigateToAddProduct value)? navigateToAddProduct,
+    TResult? Function(_navigateDeatilesPage value)? navigateDeatilesPage,
   }) {
     return logOut?.call(this);
   }
@@ -238,6 +255,7 @@ class _$logOutImpl implements _logOut {
     TResult Function(_deleteCustomer value)? deleteCustomer,
     TResult Function(_navigateToAddCustomer value)? navigateToAddCustomer,
     TResult Function(_navigateToAddProduct value)? navigateToAddProduct,
+    TResult Function(_navigateDeatilesPage value)? navigateDeatilesPage,
     required TResult orElse(),
   }) {
     if (logOut != null) {
@@ -300,6 +318,8 @@ class _$searchImpl implements _search {
     required TResult Function(int id) deleteCustomer,
     required TResult Function(BuildContext context) navigateToAddCustomer,
     required TResult Function(BuildContext context) navigateToAddProduct,
+    required TResult Function(BuildContext context, CustomerModel customer)
+        navigateDeatilesPage,
   }) {
     return search();
   }
@@ -313,6 +333,8 @@ class _$searchImpl implements _search {
     TResult? Function(int id)? deleteCustomer,
     TResult? Function(BuildContext context)? navigateToAddCustomer,
     TResult? Function(BuildContext context)? navigateToAddProduct,
+    TResult? Function(BuildContext context, CustomerModel customer)?
+        navigateDeatilesPage,
   }) {
     return search?.call();
   }
@@ -326,6 +348,8 @@ class _$searchImpl implements _search {
     TResult Function(int id)? deleteCustomer,
     TResult Function(BuildContext context)? navigateToAddCustomer,
     TResult Function(BuildContext context)? navigateToAddProduct,
+    TResult Function(BuildContext context, CustomerModel customer)?
+        navigateDeatilesPage,
     required TResult orElse(),
   }) {
     if (search != null) {
@@ -344,6 +368,7 @@ class _$searchImpl implements _search {
     required TResult Function(_navigateToAddCustomer value)
         navigateToAddCustomer,
     required TResult Function(_navigateToAddProduct value) navigateToAddProduct,
+    required TResult Function(_navigateDeatilesPage value) navigateDeatilesPage,
   }) {
     return search(this);
   }
@@ -357,6 +382,7 @@ class _$searchImpl implements _search {
     TResult? Function(_deleteCustomer value)? deleteCustomer,
     TResult? Function(_navigateToAddCustomer value)? navigateToAddCustomer,
     TResult? Function(_navigateToAddProduct value)? navigateToAddProduct,
+    TResult? Function(_navigateDeatilesPage value)? navigateDeatilesPage,
   }) {
     return search?.call(this);
   }
@@ -370,6 +396,7 @@ class _$searchImpl implements _search {
     TResult Function(_deleteCustomer value)? deleteCustomer,
     TResult Function(_navigateToAddCustomer value)? navigateToAddCustomer,
     TResult Function(_navigateToAddProduct value)? navigateToAddProduct,
+    TResult Function(_navigateDeatilesPage value)? navigateDeatilesPage,
     required TResult orElse(),
   }) {
     if (search != null) {
@@ -427,6 +454,8 @@ class _$getCustomerListImpl implements _getCustomerList {
     required TResult Function(int id) deleteCustomer,
     required TResult Function(BuildContext context) navigateToAddCustomer,
     required TResult Function(BuildContext context) navigateToAddProduct,
+    required TResult Function(BuildContext context, CustomerModel customer)
+        navigateDeatilesPage,
   }) {
     return getCustomerList();
   }
@@ -440,6 +469,8 @@ class _$getCustomerListImpl implements _getCustomerList {
     TResult? Function(int id)? deleteCustomer,
     TResult? Function(BuildContext context)? navigateToAddCustomer,
     TResult? Function(BuildContext context)? navigateToAddProduct,
+    TResult? Function(BuildContext context, CustomerModel customer)?
+        navigateDeatilesPage,
   }) {
     return getCustomerList?.call();
   }
@@ -453,6 +484,8 @@ class _$getCustomerListImpl implements _getCustomerList {
     TResult Function(int id)? deleteCustomer,
     TResult Function(BuildContext context)? navigateToAddCustomer,
     TResult Function(BuildContext context)? navigateToAddProduct,
+    TResult Function(BuildContext context, CustomerModel customer)?
+        navigateDeatilesPage,
     required TResult orElse(),
   }) {
     if (getCustomerList != null) {
@@ -471,6 +504,7 @@ class _$getCustomerListImpl implements _getCustomerList {
     required TResult Function(_navigateToAddCustomer value)
         navigateToAddCustomer,
     required TResult Function(_navigateToAddProduct value) navigateToAddProduct,
+    required TResult Function(_navigateDeatilesPage value) navigateDeatilesPage,
   }) {
     return getCustomerList(this);
   }
@@ -484,6 +518,7 @@ class _$getCustomerListImpl implements _getCustomerList {
     TResult? Function(_deleteCustomer value)? deleteCustomer,
     TResult? Function(_navigateToAddCustomer value)? navigateToAddCustomer,
     TResult? Function(_navigateToAddProduct value)? navigateToAddProduct,
+    TResult? Function(_navigateDeatilesPage value)? navigateDeatilesPage,
   }) {
     return getCustomerList?.call(this);
   }
@@ -497,6 +532,7 @@ class _$getCustomerListImpl implements _getCustomerList {
     TResult Function(_deleteCustomer value)? deleteCustomer,
     TResult Function(_navigateToAddCustomer value)? navigateToAddCustomer,
     TResult Function(_navigateToAddProduct value)? navigateToAddProduct,
+    TResult Function(_navigateDeatilesPage value)? navigateDeatilesPage,
     required TResult orElse(),
   }) {
     if (getCustomerList != null) {
@@ -581,6 +617,8 @@ class _$deleteCustomerImpl implements _deleteCustomer {
     required TResult Function(int id) deleteCustomer,
     required TResult Function(BuildContext context) navigateToAddCustomer,
     required TResult Function(BuildContext context) navigateToAddProduct,
+    required TResult Function(BuildContext context, CustomerModel customer)
+        navigateDeatilesPage,
   }) {
     return deleteCustomer(id);
   }
@@ -594,6 +632,8 @@ class _$deleteCustomerImpl implements _deleteCustomer {
     TResult? Function(int id)? deleteCustomer,
     TResult? Function(BuildContext context)? navigateToAddCustomer,
     TResult? Function(BuildContext context)? navigateToAddProduct,
+    TResult? Function(BuildContext context, CustomerModel customer)?
+        navigateDeatilesPage,
   }) {
     return deleteCustomer?.call(id);
   }
@@ -607,6 +647,8 @@ class _$deleteCustomerImpl implements _deleteCustomer {
     TResult Function(int id)? deleteCustomer,
     TResult Function(BuildContext context)? navigateToAddCustomer,
     TResult Function(BuildContext context)? navigateToAddProduct,
+    TResult Function(BuildContext context, CustomerModel customer)?
+        navigateDeatilesPage,
     required TResult orElse(),
   }) {
     if (deleteCustomer != null) {
@@ -625,6 +667,7 @@ class _$deleteCustomerImpl implements _deleteCustomer {
     required TResult Function(_navigateToAddCustomer value)
         navigateToAddCustomer,
     required TResult Function(_navigateToAddProduct value) navigateToAddProduct,
+    required TResult Function(_navigateDeatilesPage value) navigateDeatilesPage,
   }) {
     return deleteCustomer(this);
   }
@@ -638,6 +681,7 @@ class _$deleteCustomerImpl implements _deleteCustomer {
     TResult? Function(_deleteCustomer value)? deleteCustomer,
     TResult? Function(_navigateToAddCustomer value)? navigateToAddCustomer,
     TResult? Function(_navigateToAddProduct value)? navigateToAddProduct,
+    TResult? Function(_navigateDeatilesPage value)? navigateDeatilesPage,
   }) {
     return deleteCustomer?.call(this);
   }
@@ -651,6 +695,7 @@ class _$deleteCustomerImpl implements _deleteCustomer {
     TResult Function(_deleteCustomer value)? deleteCustomer,
     TResult Function(_navigateToAddCustomer value)? navigateToAddCustomer,
     TResult Function(_navigateToAddProduct value)? navigateToAddProduct,
+    TResult Function(_navigateDeatilesPage value)? navigateDeatilesPage,
     required TResult orElse(),
   }) {
     if (deleteCustomer != null) {
@@ -741,6 +786,8 @@ class _$navigateToAddCustomerImpl implements _navigateToAddCustomer {
     required TResult Function(int id) deleteCustomer,
     required TResult Function(BuildContext context) navigateToAddCustomer,
     required TResult Function(BuildContext context) navigateToAddProduct,
+    required TResult Function(BuildContext context, CustomerModel customer)
+        navigateDeatilesPage,
   }) {
     return navigateToAddCustomer(context);
   }
@@ -754,6 +801,8 @@ class _$navigateToAddCustomerImpl implements _navigateToAddCustomer {
     TResult? Function(int id)? deleteCustomer,
     TResult? Function(BuildContext context)? navigateToAddCustomer,
     TResult? Function(BuildContext context)? navigateToAddProduct,
+    TResult? Function(BuildContext context, CustomerModel customer)?
+        navigateDeatilesPage,
   }) {
     return navigateToAddCustomer?.call(context);
   }
@@ -767,6 +816,8 @@ class _$navigateToAddCustomerImpl implements _navigateToAddCustomer {
     TResult Function(int id)? deleteCustomer,
     TResult Function(BuildContext context)? navigateToAddCustomer,
     TResult Function(BuildContext context)? navigateToAddProduct,
+    TResult Function(BuildContext context, CustomerModel customer)?
+        navigateDeatilesPage,
     required TResult orElse(),
   }) {
     if (navigateToAddCustomer != null) {
@@ -785,6 +836,7 @@ class _$navigateToAddCustomerImpl implements _navigateToAddCustomer {
     required TResult Function(_navigateToAddCustomer value)
         navigateToAddCustomer,
     required TResult Function(_navigateToAddProduct value) navigateToAddProduct,
+    required TResult Function(_navigateDeatilesPage value) navigateDeatilesPage,
   }) {
     return navigateToAddCustomer(this);
   }
@@ -798,6 +850,7 @@ class _$navigateToAddCustomerImpl implements _navigateToAddCustomer {
     TResult? Function(_deleteCustomer value)? deleteCustomer,
     TResult? Function(_navigateToAddCustomer value)? navigateToAddCustomer,
     TResult? Function(_navigateToAddProduct value)? navigateToAddProduct,
+    TResult? Function(_navigateDeatilesPage value)? navigateDeatilesPage,
   }) {
     return navigateToAddCustomer?.call(this);
   }
@@ -811,6 +864,7 @@ class _$navigateToAddCustomerImpl implements _navigateToAddCustomer {
     TResult Function(_deleteCustomer value)? deleteCustomer,
     TResult Function(_navigateToAddCustomer value)? navigateToAddCustomer,
     TResult Function(_navigateToAddProduct value)? navigateToAddProduct,
+    TResult Function(_navigateDeatilesPage value)? navigateDeatilesPage,
     required TResult orElse(),
   }) {
     if (navigateToAddCustomer != null) {
@@ -902,6 +956,8 @@ class _$navigateToAddProductImpl implements _navigateToAddProduct {
     required TResult Function(int id) deleteCustomer,
     required TResult Function(BuildContext context) navigateToAddCustomer,
     required TResult Function(BuildContext context) navigateToAddProduct,
+    required TResult Function(BuildContext context, CustomerModel customer)
+        navigateDeatilesPage,
   }) {
     return navigateToAddProduct(context);
   }
@@ -915,6 +971,8 @@ class _$navigateToAddProductImpl implements _navigateToAddProduct {
     TResult? Function(int id)? deleteCustomer,
     TResult? Function(BuildContext context)? navigateToAddCustomer,
     TResult? Function(BuildContext context)? navigateToAddProduct,
+    TResult? Function(BuildContext context, CustomerModel customer)?
+        navigateDeatilesPage,
   }) {
     return navigateToAddProduct?.call(context);
   }
@@ -928,6 +986,8 @@ class _$navigateToAddProductImpl implements _navigateToAddProduct {
     TResult Function(int id)? deleteCustomer,
     TResult Function(BuildContext context)? navigateToAddCustomer,
     TResult Function(BuildContext context)? navigateToAddProduct,
+    TResult Function(BuildContext context, CustomerModel customer)?
+        navigateDeatilesPage,
     required TResult orElse(),
   }) {
     if (navigateToAddProduct != null) {
@@ -946,6 +1006,7 @@ class _$navigateToAddProductImpl implements _navigateToAddProduct {
     required TResult Function(_navigateToAddCustomer value)
         navigateToAddCustomer,
     required TResult Function(_navigateToAddProduct value) navigateToAddProduct,
+    required TResult Function(_navigateDeatilesPage value) navigateDeatilesPage,
   }) {
     return navigateToAddProduct(this);
   }
@@ -959,6 +1020,7 @@ class _$navigateToAddProductImpl implements _navigateToAddProduct {
     TResult? Function(_deleteCustomer value)? deleteCustomer,
     TResult? Function(_navigateToAddCustomer value)? navigateToAddCustomer,
     TResult? Function(_navigateToAddProduct value)? navigateToAddProduct,
+    TResult? Function(_navigateDeatilesPage value)? navigateDeatilesPage,
   }) {
     return navigateToAddProduct?.call(this);
   }
@@ -972,6 +1034,7 @@ class _$navigateToAddProductImpl implements _navigateToAddProduct {
     TResult Function(_deleteCustomer value)? deleteCustomer,
     TResult Function(_navigateToAddCustomer value)? navigateToAddCustomer,
     TResult Function(_navigateToAddProduct value)? navigateToAddProduct,
+    TResult Function(_navigateDeatilesPage value)? navigateDeatilesPage,
     required TResult orElse(),
   }) {
     if (navigateToAddProduct != null) {
@@ -988,6 +1051,188 @@ abstract class _navigateToAddProduct implements HomeEvent {
   BuildContext get context;
   @JsonKey(ignore: true)
   _$$navigateToAddProductImplCopyWith<_$navigateToAddProductImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$navigateDeatilesPageImplCopyWith<$Res> {
+  factory _$$navigateDeatilesPageImplCopyWith(_$navigateDeatilesPageImpl value,
+          $Res Function(_$navigateDeatilesPageImpl) then) =
+      __$$navigateDeatilesPageImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({BuildContext context, CustomerModel customer});
+}
+
+/// @nodoc
+class __$$navigateDeatilesPageImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$navigateDeatilesPageImpl>
+    implements _$$navigateDeatilesPageImplCopyWith<$Res> {
+  __$$navigateDeatilesPageImplCopyWithImpl(_$navigateDeatilesPageImpl _value,
+      $Res Function(_$navigateDeatilesPageImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? context = null,
+    Object? customer = null,
+  }) {
+    return _then(_$navigateDeatilesPageImpl(
+      context: null == context
+          ? _value.context
+          : context // ignore: cast_nullable_to_non_nullable
+              as BuildContext,
+      customer: null == customer
+          ? _value.customer
+          : customer // ignore: cast_nullable_to_non_nullable
+              as CustomerModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$navigateDeatilesPageImpl implements _navigateDeatilesPage {
+  const _$navigateDeatilesPageImpl(
+      {required this.context, required this.customer});
+
+  @override
+  final BuildContext context;
+  @override
+  final CustomerModel customer;
+
+  @override
+  String toString() {
+    return 'HomeEvent.navigateDeatilesPage(context: $context, customer: $customer)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$navigateDeatilesPageImpl &&
+            (identical(other.context, context) || other.context == context) &&
+            (identical(other.customer, customer) ||
+                other.customer == customer));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, context, customer);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$navigateDeatilesPageImplCopyWith<_$navigateDeatilesPageImpl>
+      get copyWith =>
+          __$$navigateDeatilesPageImplCopyWithImpl<_$navigateDeatilesPageImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(BuildContext context) logOut,
+    required TResult Function() search,
+    required TResult Function() getCustomerList,
+    required TResult Function(int id) deleteCustomer,
+    required TResult Function(BuildContext context) navigateToAddCustomer,
+    required TResult Function(BuildContext context) navigateToAddProduct,
+    required TResult Function(BuildContext context, CustomerModel customer)
+        navigateDeatilesPage,
+  }) {
+    return navigateDeatilesPage(context, customer);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(BuildContext context)? logOut,
+    TResult? Function()? search,
+    TResult? Function()? getCustomerList,
+    TResult? Function(int id)? deleteCustomer,
+    TResult? Function(BuildContext context)? navigateToAddCustomer,
+    TResult? Function(BuildContext context)? navigateToAddProduct,
+    TResult? Function(BuildContext context, CustomerModel customer)?
+        navigateDeatilesPage,
+  }) {
+    return navigateDeatilesPage?.call(context, customer);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(BuildContext context)? logOut,
+    TResult Function()? search,
+    TResult Function()? getCustomerList,
+    TResult Function(int id)? deleteCustomer,
+    TResult Function(BuildContext context)? navigateToAddCustomer,
+    TResult Function(BuildContext context)? navigateToAddProduct,
+    TResult Function(BuildContext context, CustomerModel customer)?
+        navigateDeatilesPage,
+    required TResult orElse(),
+  }) {
+    if (navigateDeatilesPage != null) {
+      return navigateDeatilesPage(context, customer);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_logOut value) logOut,
+    required TResult Function(_search value) search,
+    required TResult Function(_getCustomerList value) getCustomerList,
+    required TResult Function(_deleteCustomer value) deleteCustomer,
+    required TResult Function(_navigateToAddCustomer value)
+        navigateToAddCustomer,
+    required TResult Function(_navigateToAddProduct value) navigateToAddProduct,
+    required TResult Function(_navigateDeatilesPage value) navigateDeatilesPage,
+  }) {
+    return navigateDeatilesPage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_logOut value)? logOut,
+    TResult? Function(_search value)? search,
+    TResult? Function(_getCustomerList value)? getCustomerList,
+    TResult? Function(_deleteCustomer value)? deleteCustomer,
+    TResult? Function(_navigateToAddCustomer value)? navigateToAddCustomer,
+    TResult? Function(_navigateToAddProduct value)? navigateToAddProduct,
+    TResult? Function(_navigateDeatilesPage value)? navigateDeatilesPage,
+  }) {
+    return navigateDeatilesPage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_logOut value)? logOut,
+    TResult Function(_search value)? search,
+    TResult Function(_getCustomerList value)? getCustomerList,
+    TResult Function(_deleteCustomer value)? deleteCustomer,
+    TResult Function(_navigateToAddCustomer value)? navigateToAddCustomer,
+    TResult Function(_navigateToAddProduct value)? navigateToAddProduct,
+    TResult Function(_navigateDeatilesPage value)? navigateDeatilesPage,
+    required TResult orElse(),
+  }) {
+    if (navigateDeatilesPage != null) {
+      return navigateDeatilesPage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _navigateDeatilesPage implements HomeEvent {
+  const factory _navigateDeatilesPage(
+      {required final BuildContext context,
+      required final CustomerModel customer}) = _$navigateDeatilesPageImpl;
+
+  BuildContext get context;
+  CustomerModel get customer;
+  @JsonKey(ignore: true)
+  _$$navigateDeatilesPageImplCopyWith<_$navigateDeatilesPageImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 

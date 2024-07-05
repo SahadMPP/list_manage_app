@@ -11,11 +11,23 @@ class DeatileEvent with _$DeatileEvent {
 
   const factory DeatileEvent.productCartdelete() = _productCartdelete;
   
-  const factory DeatileEvent.productCardAdd() = _productCardAdd;
+ 
   
   const factory DeatileEvent.getCurrentUser({
     required int id,
   }) = _getCurrentUser;
 
+  const factory DeatileEvent.productList() = _productList;
+
+  const factory DeatileEvent.calculateTotol({
+    required double price,
+    required double gst,
+    required int quantity,
+  }) = _calculateTotol;
+
+
+  const factory DeatileEvent.addingCartProduct() = _addingCartProduct;
+  
+  
   
 }

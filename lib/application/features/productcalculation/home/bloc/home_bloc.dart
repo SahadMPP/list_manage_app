@@ -1,10 +1,12 @@
 // ignore: depend_on_referenced_packages
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:list_app/application/features/auth/signin/ui/sign_ui.dart';
 import 'package:list_app/application/features/productcalculation/customerAdding/ui/adding_customer.dart';
+import 'package:list_app/application/features/productcalculation/deatiles/ui/deatile_page.dart';
 import 'package:list_app/application/features/productcalculation/productAdding/ui/product_adding_ui.dart';
 import 'package:list_app/data/model/hive/customer/customer_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -58,6 +60,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         list.add(db.getAt(i)!);
       }
       emit(state.copyWith(list: list));
+    });
+
+    on<_navigateDeatilesPage>((event, emit) {
+      Navigator.of(event.context).push(MaterialPageRoute(builder: (context) => DeatilePage(customerModel:event.customer),));
     });
   }
 }
